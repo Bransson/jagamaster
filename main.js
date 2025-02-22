@@ -94,11 +94,11 @@
                 items: 1,
                 nav: false
             },
-            600: {
+            300: {
                 items: 3,
                 nav: false
             },
-            1000: {
+            500: {
                 items: 4,
                 nav: true,
                 dots: false
