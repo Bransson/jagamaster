@@ -71,7 +71,7 @@
         height: 650,
         fullwidth: true,
         centerControls: false,
-        speed: 19,
+        speed: 40,
         view: 'flow',
         overPause: false,
         autoplay: true
