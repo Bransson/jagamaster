@@ -71,7 +71,7 @@
         height: 650,
         fullwidth: true,
         centerControls: false,
-        speed: 18,
+        speed: 19,
         view: 'flow',
         overPause: false,
         autoplay: true
@@ -86,7 +86,7 @@
         loop: true,
         margin: 15,
         autoplay: true,
-        autoplayTimeout: 5000,
+        autoplayTimeout: 3000,
         autoplayHoverPause: false,
         responsiveClass: true,
         responsive: {
