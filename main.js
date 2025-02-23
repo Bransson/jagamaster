@@ -86,13 +86,13 @@
         loop: true,
         margin: 15,
         autoplay: true,
-        autoplayTimeout: 2000,
+        autoplayTimeout: 500,
         autoplayHoverPause: false,
         responsiveClass: true,
         responsive: {
             0: {
                 items: 1,
-                nav: false``
+                nav: false
             },
             300: {
                 items: 3,
