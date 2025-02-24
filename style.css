@@ -2247,3 +2247,43 @@ footer .card .ul.list-inline {
 blockquote {
     text-align: center !important;
 }
+
+.order-form {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    width: 300px;
+}
+.order-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.order-form label {
+    display: block;
+    margin-top: 10px;
+}
+.order-form input, .order-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background: #222;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+}
+.order-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.order-form button:hover {
+    background: #ccc;
+}
