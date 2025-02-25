@@ -2254,6 +2254,8 @@ blockquote {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     width: 300px;
+    text-align: center;
+    margin: 20px auto; /* Centers horizontally */
 }
 .order-form h2 {
     text-align: center;
@@ -2262,6 +2264,7 @@ blockquote {
 .order-form label {
     display: block;
     margin-top: 10px;
+    text-align: left;
 }
 .order-form input, .order-form select {
     width: 100%;
