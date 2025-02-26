@@ -120,18 +120,15 @@ const images = [
 ];
 
 let index = 0;
-const slider = document.getElementById("slider");
-let slideDirection = 1; // 1 = left to right, -1 = right to left
+const slides = document.querySelectorAll(".slide");
 
-function changeImage() {
-    // ✅ Fix: Use opacity instead of transform for Safari compatibility
-    slider.style.opacity = "0"; // Fade out current image
-    setTimeout(() => {
-        index = (index + 1) % images.length;
-        slider.src = images[index];
-        slider.style.opacity = "1"; // Fade in new image
-    }, 500); // Short delay before changing image
+function changeSlide() {
+    slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${(i - index) * 100}%)`;
+    });
+
+    index = (index + 1) % images.length;
 }
 
-// ✅ Start image slider with a 2-second interval
-setInterval(changeImage, 3000);
+// Start image slider every 3 seconds
+setInterval(changeSlide, 3000);
