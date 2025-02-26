@@ -168,6 +168,95 @@
                 font-size: 1rem;
             }
         }
+
+        
+/* 🔹 Mobile Responsive */
+@media (max-width: 1024px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 60px 5%;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .slider-container {
+        width: 85%;
+    }
+
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .jagamaster-text {
+        font-size: 3.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.3rem;
+    }
+
+    .cta-button {
+        font-size: 1.1rem;
+    }
+}
+
+/* 🔹 iPhone Pro Max (Large Mobile Screens) */
+@media (max-width: 460px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 80px 8%;
+    }
+
+    .slider-container {
+        width: 90%;
+        max-width: 400px; /* Larger images for iPhone Pro Max */
+    }
+
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .jagamaster-text {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+    }
+}
+
+/* 🔹 Extra Small Devices (iPhone SE & smaller) */
+@media (max-width: 375px) {
+    .hero-section {
+        padding: 50px 10%;
+    }
+
+    .jagamaster-text {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .slider-container {
+        width: 85%;
+        max-width: 320px;
+    }
+}
     </style>
 </head>
 
