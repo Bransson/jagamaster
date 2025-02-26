@@ -2310,12 +2310,13 @@ blockquote {
 
 /* Age verification form */
 .verification-form {
-    background-color: #111;
+    background-color: #222;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     width: 300px;
     text-align: center;
+    color: white;
 }
 
 .verification-form h2 {
@@ -2361,6 +2362,7 @@ blockquote {
 /* Initially blur the content */
 #content {
     filter: blur(5px);
+    -webkit-filter: blur(5px); /* Safari Fix */
 }
 
 
@@ -2510,8 +2512,8 @@ blockquote {
     font-size: 4rem;
     font-weight: bold;
     background: linear-gradient(to right, rgb(255, 255, 255), red);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; /* Required for Safari */
+    color: transparent; /* Fix for Safari */
 }
 
 .hero-content p {
