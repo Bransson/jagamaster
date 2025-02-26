@@ -132,3 +132,29 @@ function changeSlide() {
 
 // Start image slider every 3 seconds
 setInterval(changeSlide, 3000);
+
+
+
+
+
+
+// ✅ Full Smooth Scrolling Fix for All Browsers
+// document.addEventListener("DOMContentLoaded", function () {
+//     document.querySelectorAll(".scroll-link").forEach(anchor => {
+//         anchor.addEventListener("click", function (event) {
+//             event.preventDefault(); // Prevent default jump
+
+//             const targetId = this.getAttribute("href").substring(1);
+//             const targetElement = document.getElementById(targetId);
+
+//             if (targetElement) {
+//                 const offsetTop = targetElement.offsetTop; // Get section position
+
+//                 window.scrollTo({
+//                     top: offsetTop - 50, // Adjust for fixed headers
+//                     behavior: "smooth"
+//                 });
+//             }
+//         });
+//     });
+// });
