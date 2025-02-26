@@ -16,642 +16,364 @@
 
 <body>
 
-    <!-- header section for mobile size  -->
+    <div id="verification-container">
+        <form class="verification-form" onsubmit="verifyAge(event);">
+            <h2>Age Verification</h2>
+            <label for="birthDay">Day</label>
+            <input type="number" id="birthDay" min="1" max="31" required
+                oninput="if(this.value.length>2) this.value = this.value.slice(0,2);">
 
-    <div class="off_canvas_overlay"></div>
+            <label for="birthMonth">Month</label>
+            <select id="birthMonth" required>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
 
-    <div class="offcanvas_menu offcanvas_two">
-        <div class="canvas_open">
-            <a href="javascript:void(0)">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
+            <label for="birthYear">Year</label>
+            <input type="number" id="birthYear" min="1900" max="2024" required
+                oninput="if(this.value.length>4) this.value = this.value.slice(0,4);">
 
-        <div class="offcanvas_menu_wrapper">
-            <div class="canvas_close">
-                <a href="javascript:void(0)">
-                    <i class="fa fa-times"></i>
-                </a>
-            </div>
-            <!-- <div class="header_account">
-                <ul>
-                    <li class="language">
-                        <a href="#">
-                            <img src="images/language.png" alt=""> EN <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown_language">
-                            <li><a href="#">English</a></li>
-                            <li><a href="#">Germany</a></li>
-                            <li><a href="#">Japanese</a></li>
-                        </ul>
-                    </li>
-                    <li class="currency">
-                        <a href="#">
-                            INR<i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown_currency">
-                            <li><a href="#">EUR - EURO</a></li>
-                            <li><a href="#">GBP - British Pound</a></li>
-                            <li><a href="#">USD - US Dollar</a></li>
-                        </ul>
-                    </li>
-                    <li class="top_links">
-                        <a href="#">
-                            My Account <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown_links">
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Shopping Cart</a></li>
-                            <li><a href="#">Wishlist</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-            </div> -->
-
-            <!-- <div class="header_right_info">
-                <ul>
-                    <li class="search_box">
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-search"></i>
-                        </a>
-                        <div class="search_widget">
-                            <form action="#">
-                                <input type="text" placeholder="Search Your Wine...">
-                                <button type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </li>
-                    <li class="header_wishlist">
-                        <a href="#">
-                            <i class="fa fa-heart"></i>
-                            <span class="item_count">4</span>
-                        </a>
-                    </li>
-                    <li class="mini_cart_wrapper">
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span class="item_count">2</span>
-                        </a>
-                        <div class="mini_cart mini_cart2">
-                            <div class="cart_gallery">
-                                <div class="cart_item">
-                                    <div class="cart_img">
-                                        <a href="#">
-                                            <img src="images/cart1.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="cart_info">
-                                        <a href="#">
-                                            Quinta do Crasto
-                                        </a>
-                                        <p><span>Rs. 26669</span> X 1</p>
-                                    </div>
-                                    <div class="cart_remove">
-                                        <a href="#"><i class="fa fa-times"></i></a>
-                                    </div>
-                                </div>
-                                <div class="cart_item">
-                                    <div class="cart_img">
-                                        <a href="#">
-                                            <img src="images/cart2.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="cart_info">
-                                        <a href="#">
-                                            Domaine Jacques Prieur
-                                        </a>
-                                        <p><span>Rs. 55961</span> X 1</p>
-                                    </div>
-                                    <div class="cart_remove">
-                                        <a href="#"><i class="fa fa-times"></i></a>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="mini_cart_table">
-                                <div class="cart_table_border">
-                                    <div class="cart_total">
-                                        <span>Sub Total :</span>
-                                        <span class="price">Rs. 82630</span>
-
-                                    </div>
-                                    <div class="cart_total mt-10">
-                                        <span>Total :</span>
-                                        <span class="price">Rs. 82630</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mini_cart_footer">
-                                <div class="cart_button">
-                                    <a href="#">View Cart</a>
-                                </div>
-                                <div class="cart_button">
-                                    <a href="#">Checkout</a>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                    </li>
-                </ul>
-            </div> -->
-
-            <div id="menu" class="text-left">
-                <ul class="offcanvas_main_menu">
-                    <li class="menu-item-has-children active">
-                        <a href="#">Home</a>
-                    </li>
-                    <li class="menu-item-has-children active">
-                        <a href="#products">Products</a>
-                    </li>
-                    <li class="menu-item-has-children active">
-                        <a href="#order">Order</a>
-                    </li>
-                    <li class="menu-item-has-children"><a href="#about us">About Us</a></li>
-
- 
-                </ul>
-            </div>
-
-            <div class="offcanvas_footer">
-                <span><a href="#"><i class="fa fa-envelope"></i> okekebransson@gmail.com</a></span>
-                <ul>
-                    <li class="facebook">
-                        <a href="#">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li class="pinterest"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                    <li class="linkedin"><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="fab fa-google-plus"></i></a></li>
-
-                </ul>
-            </div>
-
-        </div>
+            <button type="submit">Verify Age</button>
+        </form>
     </div>
 
-    <header>
-        <div class="main_header header_transparent header-mobile-m">
-            <div class="header_container sticky-header">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-lg-2" style="display: inline-block;">
-                            <div class="logo">
-                                <a href="index.html"> <img src="images/logo1.png" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6" style="display: inline-block;">
-                            <div class="main_menu menu_two menu_position">
-                                <nav>
-                                    <ul>
-                                        <li>
-                                            <a href="index.html" class="active">Home</a>
-                                        </li>
-                                        <li>
-                                            <a href="#products" class="active">Products</a>
-                                        </li>
-                                        <li>
-                                            <a href="#order" class="active">Order</a>
-                                        </li>
-                                        <!-- <li class="mega_items">
-                                            <a href="#">Wines <i class="fa fa-angle-down"></i></a>
-                                            <div class="mega_menu">
-                                                <ul class="mega_menu_inner">
-                                                    <li>
-                                                        <a href="#">Red Wines</a>
-                                                        <ul>
-                                                            <li><a href="#">Pinot Noir</a></li>
-                                                            <li><a href="#">Cabernet Sauvignon</a></li>
-                                                            <li><a href="#">Syrah</a></li>
-                                                            <li><a href="#">Rhone Blends</a></li>
-                                                            <li><a href="#">Merlot</a></li>
-                                                            <li><a href="#">Gamay</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">White Wines</a>
-                                                        <ul>
-                                                            <li><a href="#">Chardonnay</a></li>
-                                                            <li><a href="#">Riesling</a></li>
-                                                            <li><a href="#">Pinot Gris</a></li>
-                                                            <li><a href="#">Viogneir</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Others</a>
-                                                        <ul>
-                                                            <li><a href="#"><b>Champagne & Sparkling</b></a></li>
-                                                            <li><a href="#"><b>Rose Wine</b></a></li>
-                                                            <li><a href="#"><b>Glassware & Accessories</b></a></li>
-                                                            <li><a href="#"><b>Wine Tasting Sets</b></a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li> -->
-                                        <li><a href="#about us">About Us</a></li>
+    <div id="content">
 
+        <!-- Mobile Menu Button (Hamburger Icon) -->
+        <div class="mobile-menu-icon">
+            <button id="menu-toggle">
+                ☰
+            </button>
+        </div>
 
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#about-us">About Us</a></li>
+            </ul>
+        </div>
 
-                        <!-- <div class="col-lg-4" style="display: inline-block;">
-                            <div class="header_top_right">
-                                <div class="header_right_info">
-                                    <ul>
-                                        <li class="search_box">
-                                            <a href="javascript:void(0)">
-                                                <i class="fa fa-search"></i>
-                                            </a>
-                                            <div class="search_widget">
-                                                <form action="#">
-                                                    <input type="text" placeholder="Search Your Wine...">
-                                                    <button type="submit">
-                                                        <i class="fa fa-search"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </li>
-                                        <li class="header_wishlist">
-                                            <a href="#">
-                                                <i class="fa fa-heart"></i>
-                                                <span class="item_count">4</span>
-                                            </a>
-                                        </li>
-                                        <li class="mini_cart_wrapper">
-                                            <a href="javascript:void(0)">
-                                                <i class="fa fa-shopping-cart"></i>
-                                                <span class="item_count">2</span>
-                                            </a>
-                                            <div class="mini_cart mini_cart2">
-                                                <div class="cart_gallery">
-                                                    <div class="cart_item">
-                                                        <div class="cart_img">
-                                                            <a href="#">
-                                                                <img src="images/cart1.png" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="cart_info">
-                                                            <a href="#">
-                                                                Quinta do Crasto
-                                                            </a>
-                                                            <p><span>Rs. 26669</span> X 1</p>
-                                                        </div>
-                                                        <div class="cart_remove">
-                                                            <a href="#"><i class="fa fa-times"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cart_item">
-                                                        <div class="cart_img">
-                                                            <a href="#">
-                                                                <img src="images/cart2.png" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="cart_info">
-                                                            <a href="#">
-                                                                Domaine Jacques Prieur
-                                                            </a>
-                                                            <p><span>Rs. 55961</span> X 1</p>
-                                                        </div>
-                                                        <div class="cart_remove">
-                                                            <a href="#"><i class="fa fa-times"></i></a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="mini_cart_table">
-                                                    <div class="cart_table_border">
-                                                        <div class="cart_total">
-                                                            <span>Sub Total :</span>
-                                                            <span class="price">Rs. 82630</span>
-
-                                                        </div>
-                                                        <div class="cart_total mt-10">
-                                                            <span>Total :</span>
-                                                            <span class="price">Rs. 82630</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="mini_cart_footer">
-                                                    <div class="cart_button">
-                                                        <a href="#">View Cart</a>
-                                                    </div>
-                                                    <div class="cart_button">
-                                                        <a href="#">Checkout</a>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-
-
-                                        </li>
-                                    </ul>
+        <header>
+            <div class="main_header header_transparent header-mobile-m">
+                <div class="header_container sticky-header">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo + Brand Name -->
+                            <div class="col-lg-3 col-md-6 col-8 d-flex align-items-center">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img src="images/logo1.png" alt="Logo">
+                                    </a>
                                 </div>
-                                <div class="header_account">
-                                    <ul>
-                                        <li class="top_links">
-                                            <a href="#">
-                                                <i class="fa fa-cog"></i>
-                                            </a>
-                                            <ul class="dropdown_links">
-                                                <li><a href="#">Checkout</a></li>
-                                                <li><a href="#">My Account</a></li>
-                                                <li><a href="#">Shopping Cart</a></li>
-                                                <li><a href="#">Wishlist</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="language">
-                                            <a href="#">
-                                                <img src="images/language.png" alt=""> EN <i
-                                                    class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="dropdown_language">
-                                                <li><a href="#">English</a></li>
-                                                <li><a href="#">Germany</a></li>
-                                                <li><a href="#">Japanese</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="currency">
-                                            <a href="#">
-                                                INR<i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="dropdown_currency">
-                                                <li><a href="#">EUR - EURO</a></li>
-                                                <li><a href="#">GBP - British Pound</a></li>
-                                                <li><a href="#">USD - US Dollar</a></li>
-                                            </ul>
-                                        </li>
-
-
-                                    </ul>
+                                <div class="brand-name">
+                                    <span class="jagamaster">JAGAMASTER</span>
+                                    <span class="west-africa">West Africa</span>
                                 </div>
                             </div>
-                        </div> -->
+                            <!-- Navigation Menu (Only for Desktop) -->
+                            <div class="col-lg-6 d-none d-lg-block">
+                                <div class="main_menu menu_two menu_position">
+                                    <nav>
+                                        <ul>
+                                            <li><a href="index.html" class="active">Home</a></li>
+                                            <li><a href="#products">Products</a></li>
+                                            <li><a href="#order">Order</a></li>
+                                            <li><a href="#about-us">About Us</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section class="pt-pb">
-
-        <div>
-            <div class="master-slider" id="masterslider">
-                <div class="ms-slide slide-1" style="z-index: 10;">
-                    <!-- <img src="images/wbg1.jpg" alt=""> -->
-                    <img src="images/product/blazefull.jpg" alt="">
-
-                    <h3 class="ms-layer bold-title" style="left: 20px; top: 250px; color: #d9932f; font-weight: 400;"
-                        data-effect="right(250)" data-duration="1000" data-delay="200" data-ease="easeOutExpo">JAGAMASTER
-                        </h3>
-                    <h3 class="ms-layer light-title"
-                        style="left: 20px; top: 300px; color: #fff; font-weight: 900; letter-spacing: 1px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="300" data-ease="easeOutExpo">
-                         HOME OF
-                    </h3>
-                    <h1 class="ms-layer light-title"
-                        style="left: 20px; top: 350px; color: #fff; font-weight: 900; letter-spacing: 0.5px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="350" data-ease="easeOutExpo">AMAZING DRINKS
-                    </h1>
-                    <a href="#order" class="ms-layer"
-                        style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="400" data-ease="easeOutExpo">SHOP
-                        NOW</a>
-                </div>
-
-                <div class="ms-slide slide-1" style="z-index: 10;">
-                    <!-- <img src="images/wbg1.jpg" alt=""> -->
-                    <img src="images/product/tequilaicefull.jpg" alt="">
-
-                    <h3 class="ms-layer bold-title" style="left: 20px; top: 250px; color: #d9932f; font-weight: 400;"
-                        data-effect="right(250)" data-duration="1000" data-delay="200" data-ease="easeOutExpo">JAGAMASTER
-                        </h3>
-                    <h3 class="ms-layer light-title"
-                        style="left: 20px; top: 300px; color: #fff; font-weight: 900; letter-spacing: 1px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="300" data-ease="easeOutExpo">
-                         HOME OF
-                    </h3>
-                    <h1 class="ms-layer light-title"
-                        style="left: 20px; top: 350px; color: #fff; font-weight: 900; letter-spacing: 0.5px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="350" data-ease="easeOutExpo">AMAZING DRINKS
-                    </h1>
-                    <a href="#order" class="ms-layer"
-                        style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="400" data-ease="easeOutExpo">SHOP
-                        NOW</a>
-                </div>
-
-                <div class="ms-slide slide-1" style="z-index: 10;">
-                    <!-- <img src="images/wbg1.jpg" alt=""> -->
-                    <img src="images/product/highwayfull.jpg" alt="">
-
-                    <h3 class="ms-layer bold-title" style="left: 20px; top: 250px; color: #d9932f; font-weight: 400;"
-                        data-effect="right(250)" data-duration="1000" data-delay="200" data-ease="easeOutExpo">JAGAMASTER
-                        </h3>
-                    <h3 class="ms-layer light-title"
-                        style="left: 20px; top: 300px; color: #fff; font-weight: 900; letter-spacing: 1px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="300" data-ease="easeOutExpo">
-                         HOME OF
-                    </h3>
-                    <h1 class="ms-layer light-title"
-                        style="left: 20px; top: 350px; color: #fff; font-weight: 900; letter-spacing: 0.5px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="350" data-ease="easeOutExpo">AMAZING DRINKS
-                    </h1>
-                    <a href="#order" class="ms-layer"
-                        style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="300" data-ease="easeOutExpo">SHOP
-                        NOW</a>
-                </div>
-
-                <div class="ms-slide slide-1" style="z-index: 10;">
-                    <!-- <img src="images/wbg1.jpg" alt=""> -->
-                    <img src="images/product/xxlfull.jpg" alt="">
-
-                    <h3 class="ms-layer bold-title" style="left: 20px; top: 250px; color: #d9932f; font-weight: 400;"
-                        data-effect="right(250)" data-duration="1000" data-delay="200" data-ease="easeOutExpo">JAGAMASTER
-                        </h3>
-                    <h3 class="ms-layer light-title"
-                        style="left: 20px; top: 300px; color: #fff; font-weight: 900; letter-spacing: 1px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="300" data-ease="easeOutExpo">
-                         HOME OF
-                    </h3>
-                    <h1 class="ms-layer light-title"
-                        style="left: 20px; top: 350px; color: #fff; font-weight: 900; letter-spacing: 0.5px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="350" data-ease="easeOutExpo">AMAZING DRINKS
-                    </h1>
-                    <a href="#order" class="ms-layer"
-                        style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="400" data-ease="easeOutExpo">SHOP
-                        NOW</a>
-                </div>
-
-                <div class="ms-slide slide-2" style="z-index: 13;" data-delay="10">
-                    <!-- <img src="images/wbg2.jpg" alt=""> -->
-                    <img src="images/product/blackjackfull.jpg" alt="">
-
-                    <h3 class="ms-layer bold-title" style="left: 20px; top: 250px; color: #d9932f; font-weight: 400;"
-                        data-effect="right(250)" data-duration="1000" data-delay="200" data-ease="easeOutExpo">
-                        JAGAMASTER</h3>
-                    <h3 class="ms-layer light-title"
-                        style="left: 20px; top: 300px; color: #fff; font-weight: 900; letter-spacing: 1px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="300" data-ease="easeOutExpo">
-                        HOME OF
-                    </h3>
-                    <h1 class="ms-layer light-title"
-                        style="left: 20px; top: 350px; color: #fff; font-weight: 900; letter-spacing: 0.5px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="350" data-ease="easeOutExpo">AMAZING DRINKS
-                    </h1>
-                    <a href="#order" class="ms-layer"
-                        style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
-                        data-effect="left(short)" data-duration="1000" data-delay="400" data-ease="easeOutExpo">SHOP
-                        NOW</a>
+        <!-- Hero Section with Slider -->
+        <section class="hero-section">
+            <!-- Image Slider -->
+            <div class="hero-image">
+                <div class="slider-container">
+                    <img id="slider" src="images/product/blazefulljpg" alt="Product Image">
                 </div>
             </div>
-        </div>
 
-    </section>
-
-    <div class="clearfix"></div>
-
-    <section class="no-padding">
-        <div class="container-fluid">
-            <div class="row no-gutter">
-                <div class="col-lg-4 col-md-3 col-sm-4">
-                    <p class="lineeffect">
-                        <a href="#">
-                            <img src="images/product/tequilablaze.jpg" class="img-responsive img-fill" alt="">
-                        </a>
-                    </p>
-                </div>
-                <div class="col-lg-4 col-md-3 col-sm-4">
-                    <p class="lineeffect">
-                        <a href="#">
-                            <img src="images/product/highwayblackjack.jpg" class="img-responsive img-fill" alt="">
-                        </a>
-                    </p>
-                </div>
-                <div class="col-lg-4 col-md-3 col-sm-4">
-                    <p class="lineeffect">
-                        <a href="#">
-                            <img src="images/product/xxlmokacafe.jpg" class="img-responsive img-fill" alt="">
-                        </a>
-                    </p>
-                </div>
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <h1 class="jagamaster-text">Welcome to JAGAMASTER</h1>
+                <p>Your premier destination for quality products in West Africa.</p>
+                <a href="#products" class="cta-button">Explore Our Products</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="category-img" id="products">
-        <div class="container">
-            <div class="row">
-                <div class="dark-headingstyle-one text-center">
-                    <h2 class="dart-heading">Our Products</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-                    <h4 class="cat-link">
-                        <a href="#">
-                            <img src="images/product/blaze.png" class="img-responsive" alt="">
-                            Blaze <br> drink
-                        </a>
-                    </h4>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-                    <h4 class="cat-link">
-                        <a href="#">
-                            <img src="images/product/tequilaice.png" class="img-responsive" alt="">
-                            Tequila Ice <br> drink
-                        </a>
-                    </h4>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-                    <h4 class="cat-link">
-                        <a href="#">
-                            <img src="images/product/highway.png" class="img-responsive" alt="">
-                            HighWay <br> drink
-                        </a>
-                    </h4>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-                    <h4 class="cat-link">
-                        <a href="#">
-                            <img src="images/product/xxl.png" class="img-responsive" alt="">
-                            XXL <br> drink
-                        </a>
-                    </h4>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-                    <h4 class="cat-link">
-                        <a href="#">
-                            <img src="images/product/blackjack.png" class="img-responsive" alt="">
-                            BlackJack <br> drink
-                        </a>
-                    </h4>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-                    <h4 class="cat-link">
-                        <a href="#">
-                            <img src="images/product/mokacafe.png" class="img-responsive" alt="">
-                            MokaCafe <br> drink
-                        </a>
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- <section class="pt-pb">
 
-    <section class="super-deal-section" style="background-image: url(images/bg.png);">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-8 col-md-push-6 col-sm-push-4">
-                    <div class="super-deal">
-                        <h1>Well Formulated
-                            <br>
-                            <span style="font-weight: 100;">Collection</span>
+            <div>
+                <div class="master-slider" id="masterslider">
+                    <div class="ms-slide slide-1" style="z-index: 10;">
+                        <img src="images/product/blazefull.jpg" alt="">
+
+                        <h3 class="ms-layer bold-title"
+                            style="left: 20px; top: 250px; color: #d9932f; font-weight: 400;" data-effect="right(250)"
+                            data-duration="1000" data-delay="200" data-ease="easeOutExpo">JAGAMASTER
+                        </h3>
+                        <h3 class="ms-layer light-title"
+                            style="left: 20px; top: 300px; color: #fff; font-weight: 900; letter-spacing: 1px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="300" data-ease="easeOutExpo">
+                            HOME OF
+                        </h3>
+                        <h1 class="ms-layer light-title"
+                            style="left: 20px; top: 350px; color: #fff; font-weight: 900; letter-spacing: 0.5px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="350" data-ease="easeOutExpo">
+                            AMAZING DRINKS
                         </h1>
-                        <h2>Experience The Bold Taste Of JAGAMASTER</h2>
-                        <p></p>
-                        <div class="clearfix">
-                            At Jagamaster, we craft premium alcoholic beverages and energy drinks designed for those who crave bold flavors and unmatched quality. Our drinks are expertly formulated using the finest ingredients, ensuring a smooth, refreshing, and energizing experience with every sip.
+                        <a href="#order" class="ms-layer"
+                            style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="400" data-ease="easeOutExpo">SHOP
+                            NOW</a>
+                    </div>
 
-Whether you're looking for a rich, full-bodied alcoholic blend to unwind or a power-packed energy drink to keep you going, Jagamaster has the perfect choice for you.
+                    <div class="ms-slide slide-1" style="z-index: 10;">
+                        <img src="images/product/tequilaicefull.jpg" alt="">
 
-Join the Jagamaster experience—great taste, great energy, and great moments!
-                        </div>
-                        <a href="#order" class="btn btn-normal">SHOP NOW</a>
+                        <h3 class="ms-layer bold-title"
+                            style="left: 20px; top: 250px; color: #d9932f; font-weight: 400;" data-effect="right(250)"
+                            data-duration="1000" data-delay="200" data-ease="easeOutExpo">JAGAMASTER
+                        </h3>
+                        <h3 class="ms-layer light-title"
+                            style="left: 20px; top: 300px; color: #fff; font-weight: 900; letter-spacing: 1px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="300" data-ease="easeOutExpo">
+                            HOME OF
+                        </h3>
+                        <h1 class="ms-layer light-title"
+                            style="left: 20px; top: 350px; color: #fff; font-weight: 900; letter-spacing: 0.5px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="350" data-ease="easeOutExpo">
+                            AMAZING DRINKS
+                        </h1>
+                        <a href="#order" class="ms-layer"
+                            style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="400" data-ease="easeOutExpo">SHOP
+                            NOW</a>
+                    </div>
+
+                    <div class="ms-slide slide-1" style="z-index: 10;">
+                        <img src="images/product/highwayfull.jpg" alt="">
+
+                        <h3 class="ms-layer bold-title"
+                            style="left: 20px; top: 250px; color: #d9932f; font-weight: 400;" data-effect="right(250)"
+                            data-duration="1000" data-delay="200" data-ease="easeOutExpo">JAGAMASTER
+                        </h3>
+                        <h3 class="ms-layer light-title"
+                            style="left: 20px; top: 300px; color: #fff; font-weight: 900; letter-spacing: 1px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="300" data-ease="easeOutExpo">
+                            HOME OF
+                        </h3>
+                        <h1 class="ms-layer light-title"
+                            style="left: 20px; top: 350px; color: #fff; font-weight: 900; letter-spacing: 0.5px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="350" data-ease="easeOutExpo">
+                            AMAZING DRINKS
+                        </h1>
+                        <a href="#order" class="ms-layer"
+                            style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="300" data-ease="easeOutExpo">SHOP
+                            NOW</a>
+                    </div>
+
+                    <div class="ms-slide slide-1" style="z-index: 10;">
+                        <img src="images/product/xxlfull.jpg" alt="">
+
+                        <h3 class="ms-layer bold-title"
+                            style="left: 20px; top: 250px; color: #d9932f; font-weight: 400;" data-effect="right(250)"
+                            data-duration="1000" data-delay="200" data-ease="easeOutExpo">JAGAMASTER
+                        </h3>
+                        <h3 class="ms-layer light-title"
+                            style="left: 20px; top: 300px; color: #fff; font-weight: 900; letter-spacing: 1px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="300" data-ease="easeOutExpo">
+                            HOME OF
+                        </h3>
+                        <h1 class="ms-layer light-title"
+                            style="left: 20px; top: 350px; color: #fff; font-weight: 900; letter-spacing: 0.5px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="350" data-ease="easeOutExpo">
+                            AMAZING DRINKS
+                        </h1>
+                        <a href="#order" class="ms-layer"
+                            style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="400" data-ease="easeOutExpo">SHOP
+                            NOW</a>
+                    </div>
+
+                    <div class="ms-slide slide-1" style="z-index: 13;" data-delay="10">
+                        <img src="images/product/blackjackfull.jpg" alt="">
+
+                        <h3 class="ms-layer bold-title"
+                            style="left: 20px; top: 250px; color: #d9932f; font-weight: 400;" data-effect="right(250)"
+                            data-duration="1000" data-delay="200" data-ease="easeOutExpo">
+                            JAGAMASTER</h3>
+                        <h3 class="ms-layer light-title"
+                            style="left: 20px; top: 300px; color: #fff; font-weight: 900; letter-spacing: 1px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="300" data-ease="easeOutExpo">
+                            HOME OF
+                        </h3>
+                        <h1 class="ms-layer light-title"
+                            style="left: 20px; top: 350px; color: #fff; font-weight: 900; letter-spacing: 0.5px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="350" data-ease="easeOutExpo">
+                            AMAZING DRINKS
+                        </h1>
+                        <a href="#order" class="ms-layer"
+                            style="left: 20px; top: 424px; color: #fff; font-weight: 400; letter-spacing: 0.5px; margin: 0px ; padding: 0px; font-size: 14px; line-height: 20px; border: 1px solid #fff; padding: 10px 20px;"
+                            data-effect="left(short)" data-duration="1000" data-delay="400" data-ease="easeOutExpo">SHOP
+                            NOW</a>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </section>
+        </section> -->
 
-    <section class="product-slide">
-        <div class="container">
-            <div class="row">
-                <div class="dark-headingstyle-one text-center">
-                    <h2 class="dart-heading">Featured Products</h2>
-                    <img src="images/Icon-sep.png" alt="">
+        <div class="clearfix"></div>
+
+        <section class="no-padding">
+            <div class="container-fluid">
+                <div class="row no-gutter">
+                    <div class="col-lg-4 col-md-3 col-sm-4">
+                        <p class="lineeffect">
+                            <a href="#">
+                                <img src="images/product/tequilablaze.jpg" class="img-responsive img-fill" alt="">
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-4">
+                        <p class="lineeffect">
+                            <a href="#">
+                                <img src="images/product/highwayblackjack.jpg" class="img-responsive img-fill" alt="">
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-4">
+                        <p class="lineeffect">
+                            <a href="#">
+                                <img src="images/product/xxlmokacafe.jpg" class="img-responsive img-fill" alt="">
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div role="tabpanel" class="tabSix text-center">
-                        <!-- <ul id="tabSix" class="nav nav-tabs">
+        </section>
+
+        <section class="category-img" id="products">
+            <div class="container">
+                <div class="row">
+                    <div class="dark-headingstyle-one text-center">
+                        <h2 class="dart-heading">Our Products</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                        <h4 class="cat-link">
+                            <a href="#">
+                                <img src="images/product/blaze.png" class="img-responsive" alt="">
+                                Blaze <br> drink
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                        <h4 class="cat-link">
+                            <a href="#">
+                                <img src="images/product/tequilaice.png" class="img-responsive" alt="">
+                                Tequila Ice <br> drink
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                        <h4 class="cat-link">
+                            <a href="#">
+                                <img src="images/product/highway.png" class="img-responsive" alt="">
+                                HighWay <br> drink
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                        <h4 class="cat-link">
+                            <a href="#">
+                                <img src="images/product/xxl.png" class="img-responsive" alt="">
+                                XXL <br> drink
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                        <h4 class="cat-link">
+                            <a href="#">
+                                <img src="images/product/blackjack.png" class="img-responsive" alt="">
+                                BlackJack <br> drink
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                        <h4 class="cat-link">
+                            <a href="#">
+                                <img src="images/product/mokacafe.png" class="img-responsive" alt="">
+                                MokaCafe <br> drink
+                            </a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="super-deal-section" style="background-image: url(images/bg.png);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-8 col-md-push-6 col-sm-push-4">
+                        <div class="super-deal">
+                            <h1>Well Formulated
+                                <br>
+                                <span style="font-weight: 100;">Collection</span>
+                            </h1>
+                            <h2>Experience The Bold Taste Of JAGAMASTER</h2>
+                            <p></p>
+                            <div class="clearfix">
+                                At Jagamaster, we craft premium alcoholic beverages and energy drinks designed for those
+                                who crave bold flavors and unmatched quality. Our drinks are expertly formulated using
+                                the finest ingredients, ensuring a smooth, refreshing, and energizing experience with
+                                every sip.
+
+                                Whether you're looking for a rich, full-bodied alcoholic blend to unwind or a
+                                power-packed energy drink to keep you going, Jagamaster has the perfect choice for you.
+
+                                Join the Jagamaster experience—great taste, great energy, and great moments!
+                            </div>
+                            <a href="#order" class="btn btn-normal">SHOP NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="product-slide">
+            <div class="container">
+                <div class="row">
+                    <div class="dark-headingstyle-one text-center">
+                        <h2 class="dart-heading">Featured Products</h2>
+                        <img src="images/Icon-sep.png" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div role="tabpanel" class="tabSix text-center">
+                            <!-- <ul id="tabSix" class="nav nav-tabs">
                             <li class="active">
                                 <a href="#contentSix-one" data-toggle="tab">
                                     <p>Best Seller</p>
@@ -669,447 +391,195 @@ Join the Jagamaster experience—great taste, great energy, and great moments!
                             </li>
                         </ul> -->
 
-                        <div class="tab-content">
-                            <!-- first tab  -->
-                            <div class="tab-pane in active" id="contentSix-one">
-                                <div class="tab-pane" id="contentSix-2">
-                                    <div class="owl-carousel owl-theme product-slider">
-                                        <!-- product starts  -->
-                                        <div class="product-main">
-                                            <figure class="dark-theme">
-                                                <img src="images/product/blackjacksale.png" alt="">
-                                                <div class="ribbon"><span>NEW</span></div>
-                                                <span class="block-sticker-tag1">
-                                                    <span class="off_tag"><strong><i
-                                                                class="fa fa-shopping-basket"></i></strong></span>
-                                                </span>
+                            <div class="tab-content">
+                                <!-- first tab  -->
+                                <div class="tab-pane in active" id="contentSix-one">
+                                    <div class="tab-pane" id="contentSix-2">
+                                        <div class="owl-carousel owl-theme product-slider">
+                                            <!-- product starts  -->
+                                            <div class="product-main">
+                                                <figure class="dark-theme">
+                                                    <img src="images/product/blackjacksale.png" alt="">
+                                                    <div class="ribbon"><span>NEW</span></div>
+                                                    <span class="block-sticker-tag1">
+                                                        <span class="off_tag"><strong><i
+                                                                    class="fa fa-shopping-basket"></i></strong></span>
+                                                    </span>
 
-                                            </figure>
-                                            <div class="block-caption1">
-                                                <h4>BlackJack</h4>
-                                                <div class="clear"></div>
-                                                <div class="rpice">
-                                                    <span class="sell-price">13,00</span>
-                                                    <span class="actual-price">13,00</span>
+                                                </figure>
+                                                <div class="block-caption1">
+                                                    <h4>BlackJack</h4>
+                                                    <div class="clear"></div>
+                                                    <div class="rpice">
+                                                        <span class="sell-price">13,00</span>
+                                                        <span class="actual-price">13,00</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            </div>
-                                        <!-- product ends  -->
-                                        <!-- product starts  -->
-                                        <div class="product-main">
-                                            <figure class="dark-theme">
-                                                <img src="images/product/blazesale.png" alt="">
+                                            <!-- product ends  -->
+                                            <!-- product starts  -->
+                                            <div class="product-main">
+                                                <figure class="dark-theme">
+                                                    <img src="images/product/blazesale.png" alt="">
 
-                                                <span class="block-sticker-tag1">
-                                                    <span class="off_tag"><strong><i
-                                                                class="fa fa-shopping-basket"></i></strong></span>
-                                                </span>
+                                                    <span class="block-sticker-tag1">
+                                                        <span class="off_tag"><strong><i
+                                                                    class="fa fa-shopping-basket"></i></strong></span>
+                                                    </span>
 
-                                            </figure>
-                                            <div class="block-caption1">
-                                                <h4>Blaze</h4>
-                                                <div class="clear"></div>
-                                                <div class="rpice">
-                                                    <span class="sell-price">13,00</span>
-                                                    <span class="actual-price">13,00</span>
+                                                </figure>
+                                                <div class="block-caption1">
+                                                    <h4>Blaze</h4>
+                                                    <div class="clear"></div>
+                                                    <div class="rpice">
+                                                        <span class="sell-price">13,00</span>
+                                                        <span class="actual-price">13,00</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="product-main">
-                                            <figure class="dark-theme">
-                                                <img src="images/product/highwaysale.png" alt="">
+                                            <div class="product-main">
+                                                <figure class="dark-theme">
+                                                    <img src="images/product/highwaysale.png" alt="">
 
-                                                <span class="block-sticker-tag1">
-                                                    <span class="off_tag"><strong><i
-                                                                class="fa fa-shopping-basket"></i></strong></span>
-                                                </span>
+                                                    <span class="block-sticker-tag1">
+                                                        <span class="off_tag"><strong><i
+                                                                    class="fa fa-shopping-basket"></i></strong></span>
+                                                    </span>
 
-                                            </figure>
-                                            <div class="block-caption1">
-                                                <h4>HighWay</h4>
-                                                <div class="clear"></div>
-                                                <div class="rpice">
-                                                    <span class="sell-price">13,00</span>
-                                                    <span class="actual-price">13,00</span>
+                                                </figure>
+                                                <div class="block-caption1">
+                                                    <h4>HighWay</h4>
+                                                    <div class="clear"></div>
+                                                    <div class="rpice">
+                                                        <span class="sell-price">13,00</span>
+                                                        <span class="actual-price">13,00</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="product-main">
-                                            <figure class="dark-theme">
-                                                <img src="images/product/tequilaicesale.png" alt="">
-                                                <span class="block-sticker-tag1">
-                                                    <span class="off_tag"><strong><i
-                                                                class="fa fa-shopping-basket"></i></strong></span>
-                                                </span>
+                                            <div class="product-main">
+                                                <figure class="dark-theme">
+                                                    <img src="images/product/tequilaicesale.png" alt="">
+                                                    <span class="block-sticker-tag1">
+                                                        <span class="off_tag"><strong><i
+                                                                    class="fa fa-shopping-basket"></i></strong></span>
+                                                    </span>
 
-                                            </figure>
-                                            <div class="block-caption1">
-                                                <h4>TequilaIce</h4>
-                                                <div class="clear"></div>
-                                                <div class="rpice">
-                                                    <span class="sell-price">#13,000</span>
-                                                    <span class="actual-price">13,00</span>
+                                                </figure>
+                                                <div class="block-caption1">
+                                                    <h4>TequilaIce</h4>
+                                                    <div class="clear"></div>
+                                                    <div class="rpice">
+                                                        <span class="sell-price">#13,000</span>
+                                                        <span class="actual-price">13,00</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="product-main">
-                                            <figure class="dark-theme">
-                                                <img src="images/product/xxlsale.png" alt="">
-                                                <span class="block-sticker-tag1">
-                                                    <span class="off_tag"><strong><i
-                                                                class="fa fa-shopping-basket"></i></strong></span>
-                                                </span>
+                                            <div class="product-main">
+                                                <figure class="dark-theme">
+                                                    <img src="images/product/xxlsale.png" alt="">
+                                                    <span class="block-sticker-tag1">
+                                                        <span class="off_tag"><strong><i
+                                                                    class="fa fa-shopping-basket"></i></strong></span>
+                                                    </span>
 
-                                            </figure>
-                                            <div class="block-caption1">
-                                                <h4>XXL</h4>
-                                                <div class="clear"></div>
-                                                <div class="rpice">
-                                                    <span class="sell-price">13,00</span>
-                                                    <span class="actual-price">13,00</span>
+                                                </figure>
+                                                <div class="block-caption1">
+                                                    <h4>XXL</h4>
+                                                    <div class="clear"></div>
+                                                    <div class="rpice">
+                                                        <span class="sell-price">13,00</span>
+                                                        <span class="actual-price">13,00</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- second tab  -->
-                            <!-- <div class="tab-pane" id="contentSix-two">
-                                <div class="owl-carousel owl-theme product-slider">
-                                    <div class="product-main">
-                                        <figure class="dark-theme">
-                                            <img src="images/product/product-6.png" alt="">
-                                            <span class="block-sticker-tag1">
-                                                <span class="off_tag"><strong><i
-                                                            class="fa fa-shopping-basket"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag2">
-                                                <span class="off_tag1"><strong><i
-                                                            class="fa fa-heart"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag3">
-                                                <span class="off_tag2"><strong><i class="fa fa-eye"></i></strong></span>
-                                            </span>
-                                        </figure>
-                                        <div class="block-caption1">
-                                            <h4>Domaine Jacques</h4>
-                                            <div class="clear"></div>
-                                            <div class="rpice">
-                                                <span class="sell-price">13,00</span>
-                                                <span class="actual-price">13,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-main">
-                                        <figure class="dark-theme">
-                                            <img src="images/product/product-7.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- row ends  -->
+            </div>
+            <!-- container ends  -->
+        </section>
 
-                                            <span class="block-sticker-tag1">
-                                                <span class="off_tag"><strong><i
-                                                            class="fa fa-shopping-basket"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag2">
-                                                <span class="off_tag1"><strong><i
-                                                            class="fa fa-heart"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag3">
-                                                <span class="off_tag2"><strong><i class="fa fa-eye"></i></strong></span>
-                                            </span>
-                                        </figure>
-                                        <div class="block-caption1">
-                                            <h4>Domaine Jacques</h4>
-                                            <div class="clear"></div>
-                                            <div class="rpice">
-                                                <span class="sell-price">13,00</span>
-                                                <span class="actual-price">13,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-main">
-                                        <figure class="dark-theme">
-                                            <img src="images/product/product-8.png" alt="">
+        <section class="super-deal-section" style="background-image: url(images/jagabg2.jpg);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-8 col-md-push-6 col-sm-push-4">
+                        <div class="super-deal">
+                            <h1>The Magic Of JAGABAN
+                                <br>
+                                <span style="font-weight: 100;">Collection</span>
+                            </h1>
+                            <h2>Unleash the Taste, Feel the Energy!</h2>
+                            <p></p>
+                            <div class="clearfix" styles="color: #000;">
+                                At Jagamaster, every sip is an explosion of bold flavor and unstoppable energy. Our
+                                expertly crafted alcoholic drinks and energy beverages are made to excite your taste
+                                buds while giving you the boost you need to power through your day or night.
 
-                                            <span class="block-sticker-tag1">
-                                                <span class="off_tag"><strong><i
-                                                            class="fa fa-shopping-basket"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag2">
-                                                <span class="off_tag1"><strong><i
-                                                            class="fa fa-heart"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag3">
-                                                <span class="off_tag2"><strong><i class="fa fa-eye"></i></strong></span>
-                                            </span>
-                                        </figure>
-                                        <div class="block-caption1">
-                                            <h4>Domaine Jacques</h4>
-                                            <div class="clear"></div>
-                                            <div class="rpice">
-                                                <span class="sell-price">13,00</span>
-                                                <span class="actual-price">13,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-main">
-                                        <figure class="dark-theme">
-                                            <img src="images/product/product-1.png" alt="">
-                                            <div class="ribbon"><span>New</span></div>
-                                            <span class="block-sticker-tag1">
-                                                <span class="off_tag"><strong><i
-                                                            class="fa fa-shopping-basket"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag2">
-                                                <span class="off_tag1"><strong><i
-                                                            class="fa fa-heart"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag3">
-                                                <span class="off_tag2"><strong><i class="fa fa-eye"></i></strong></span>
-                                            </span>
-                                        </figure>
-                                        <div class="block-caption1">
-                                            <h4>Domaine Jacques</h4>
-                                            <div class="clear"></div>
-                                            <div class="rpice">
-                                                <span class="sell-price">13,00</span>
-                                                <span class="actual-price">13,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-main">
-                                        <figure class="dark-theme">
-                                            <img src="images/product/product-2.png" alt="">
-                                            <span class="block-sticker-tag1">
-                                                <span class="off_tag"><strong><i
-                                                            class="fa fa-shopping-basket"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag2">
-                                                <span class="off_tag1"><strong><i
-                                                            class="fa fa-heart"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag3">
-                                                <span class="off_tag2"><strong><i class="fa fa-eye"></i></strong></span>
-                                            </span>
-                                        </figure>
-                                        <div class="block-caption1">
-                                            <h4>Domaine Jacques</h4>
-                                            <div class="clear"></div>
-                                            <div class="rpice">
-                                                <span class="sell-price">13,00</span>
-                                                <span class="actual-price">13,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- third tab  -->
-                            <!-- <div class="tab-pane" id="contentSix-three">
-                                <div class="owl-carousel owl-theme product-slider">
-                                    <div class="product-main">
-                                        <figure class="dark-theme">
-                                            <img src="images/product/product-3.png" alt="">
-                                            <span class="block-sticker-tag1">
-                                                <span class="off_tag"><strong><i
-                                                            class="fa fa-shopping-basket"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag2">
-                                                <span class="off_tag1"><strong><i
-                                                            class="fa fa-heart"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag3">
-                                                <span class="off_tag2"><strong><i class="fa fa-eye"></i></strong></span>
-                                            </span>
-                                        </figure>
-                                        <div class="block-caption1">
-                                            <h4>Domaine Jacques</h4>
-                                            <div class="clear"></div>
-                                            <div class="rpice">
-                                                <span class="sell-price">13,00</span>
-                                                <span class="actual-price">13,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-main">
-                                        <figure class="dark-theme">
-                                            <img src="images/product/product-1.png" alt="">
+                                From the smooth, rich taste of our alcoholic blends to the refreshing, high-energy kick
+                                of our power drinks, Jagamaster is your perfect companion for any occasion.
 
-                                            <span class="block-sticker-tag1">
-                                                <span class="off_tag"><strong><i
-                                                            class="fa fa-shopping-basket"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag2">
-                                                <span class="off_tag1"><strong><i
-                                                            class="fa fa-heart"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag3">
-                                                <span class="off_tag2"><strong><i class="fa fa-eye"></i></strong></span>
-                                            </span>
-                                        </figure>
-                                        <div class="block-caption1">
-                                            <h4>Domaine Jacques</h4>
-                                            <div class="clear"></div>
-                                            <div class="rpice">
-                                                <span class="sell-price">13,00</span>
-                                                <span class="actual-price">13,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-main">
-                                        <figure class="dark-theme">
-                                            <img src="images/product/product-3.png" alt="">
+                                Give it a try today—experience the taste, feel the energy, and keep the good vibes
+                                going!
 
-                                            <span class="block-sticker-tag1">
-                                                <span class="off_tag"><strong><i
-                                                            class="fa fa-shopping-basket"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag2">
-                                                <span class="off_tag1"><strong><i
-                                                            class="fa fa-heart"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag3">
-                                                <span class="off_tag2"><strong><i class="fa fa-eye"></i></strong></span>
-                                            </span>
-                                        </figure>
-                                        <div class="block-caption1">
-                                            <h4>Domaine Jacques</h4>
-                                            <div class="clear"></div>
-                                            <div class="rpice">
-                                                <span class="sell-price">13,00</span>
-                                                <span class="actual-price">13,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-main">
-                                        <figure class="dark-theme">
-                                            <img src="images/product/product-6.png" alt="">
-                                            <div class="ribbon"><span>New</span></div>
-                                            <span class="block-sticker-tag1">
-                                                <span class="off_tag"><strong><i
-                                                            class="fa fa-shopping-basket"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag2">
-                                                <span class="off_tag1"><strong><i
-                                                            class="fa fa-heart"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag3">
-                                                <span class="off_tag2"><strong><i class="fa fa-eye"></i></strong></span>
-                                            </span>
-                                        </figure>
-                                        <div class="block-caption1">
-                                            <h4>Domaine Jacques</h4>
-                                            <div class="clear"></div>
-                                            <div class="rpice">
-                                                <span class="sell-price">13,00</span>
-                                                <span class="actual-price">13,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-main">
-                                        <figure class="dark-theme">
-                                            <img src="images/product/product-4.png" alt="">
-                                            <span class="block-sticker-tag1">
-                                                <span class="off_tag"><strong><i
-                                                            class="fa fa-shopping-basket"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag2">
-                                                <span class="off_tag1"><strong><i
-                                                            class="fa fa-heart"></i></strong></span>
-                                            </span>
-                                            <span class="block-sticker-tag3">
-                                                <span class="off_tag2"><strong><i class="fa fa-eye"></i></strong></span>
-                                            </span>
-                                        </figure>
-                                        <div class="block-caption1">
-                                            <h4>Domaine Jacques</h4>
-                                            <div class="clear"></div>
-                                            <div class="rpice">
-                                                <span class="sell-price">13,00</span>
-                                                <span class="actual-price">13,00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
+                            </div>
+                            <a href="#order" class="btn btn-normal">SHOP NOW</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- row ends  -->
-        </div>
-        <!-- container ends  -->
-    </section>
 
-    <section class="super-deal-section" style="background-image: url(images/jagabg2.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-8 col-md-push-6 col-sm-push-4">
-                    <div class="super-deal">
-                        <h1>The Magic Of JAGABAN
-                            <br>
-                            <span style="font-weight: 100;">Collection</span>
-                        </h1>
-                        <h2>Unleash the Taste, Feel the Energy!</h2>
-                        <p></p>
-                        <div class="clearfix" styles="color: #000;">
-                            At Jagamaster, every sip is an explosion of bold flavor and unstoppable energy. Our expertly crafted alcoholic drinks and energy beverages are made to excite your taste buds while giving you the boost you need to power through your day or night.
+        </section>
 
-From the smooth, rich taste of our alcoholic blends to the refreshing, high-energy kick of our power drinks, Jagamaster is your perfect companion for any occasion.
 
-Give it a try today—experience the taste, feel the energy, and keep the good vibes going!
-
+        <section id="order">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-6 col-sm-8 col-md-push-6 col-sm-push-4">
+                        <div class="super-deal">
+                            <h1> Place An Order Now
+                                <br>
+                                <!-- <span style="font-weight: 100;">Collection</span> -->
+                            </h1>
+                            <h2>Regardless of where you are</h2>
+                            <p></p>
                         </div>
-                        <a href="#order" class="btn btn-normal">SHOP NOW</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-    <section id="order">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-6 col-sm-8 col-md-push-6 col-sm-push-4">
-                    <div class="super-deal">
-                        <h1> Place An Order Now
-                            <br>
-                            <!-- <span style="font-weight: 100;">Collection</span> -->
-                        </h1>
-                        <h2>Regardless of where you are</h2>
-                        <p></p>
-                    </div>
                         <div class="clearfix center" styles="color: #000;">
                             <form class="order-form">
                                 <h2>Place Your Order</h2>
                                 <label for="name">Full Name</label>
                                 <input type="text" id="name" name="name" required>
-                        
+
                                 <label for="product">Product Name</label>
                                 <input type="text" id="product" name="product" required>
-                        
+
                                 <label for="quantity">Quantity</label>
                                 <input type="number" id="quantity" name="quantity" required>
-                        
+
                                 <label for="state">State</label>
                                 <input type="text" id="state" name="state" required>
-                        
+
                                 <label for="email">Email</label>
                                 <input type="email" id="email" name="email" required>
-                        
+
                                 <button type="submit">Submit Order</button>
                             </form>
                         </div>
                     </div>
-                
+
+                </div>
+
             </div>
-            
-        </div>
-    </section> 
+        </section>
 
 
-    <section id="about us">
-        <div class="container">
-            <div class="row text-center">
+        <section id="about us">
+            <div class="container">
+                <div class="row text-center">
                     <div class="super-deal">
                         <h1> About Us
                             <br>
@@ -1118,268 +588,99 @@ Give it a try today—experience the taste, feel the energy, and keep the good v
                         <!-- <h2>Regardless of where you are</h2> -->
                         <p></p>
                     </div>
-                        <div class="clearfix text-centertyles="color: #000;">
-                            Welcome to Jagamaster, where passion meets perfection in the world of beverages. Founded by Lavish, our brand is dedicated to crafting high-quality alcoholic drinks and energy beverages that deliver exceptional taste and invigorating energy.
+                    <div class="clearfix text-centertyles=" color: #000;">
+                        Welcome to Jagamaster, where passion meets perfection in the world of beverages. Founded by
+                        Lavish, our brand is dedicated to crafting high-quality alcoholic drinks and energy beverages
+                        that deliver exceptional taste and invigorating energy.
 
-                            Located along the Ibadan Expressway, our state-of-the-art factory is where innovation and premium ingredients come together to create drinks that excite the senses. Every bottle of Jagamaster reflects our commitment to excellence, ensuring a rich, smooth, and satisfying experience for our customers.
-                            
-                            At Jagamaster, we don’t just make drinks—we create moments. Join us and taste the energy!
-                        </div>
-                    
-                
+                        Located along the Ibadan Expressway, our state-of-the-art factory is where innovation and
+                        premium ingredients come together to create drinks that excite the senses. Every bottle of
+                        Jagamaster reflects our commitment to excellence, ensuring a rich, smooth, and satisfying
+                        experience for our customers.
+
+                        At Jagamaster, we don’t just make drinks—we create moments. Join us and taste the energy!
+                    </div>
+
+
+                </div>
+
             </div>
-            
-        </div>
-    </section> 
+        </section>
 
 
-
-
-    <!-- <section class="testi" style="background-image: url(images/bg1.png);">
-        <div class="container">
-            <div class="row">
-                <div class="dart-headingstyle-one text-center">
-                    <h2 class="dart-heading">Customer Review</h2>
-                    <img src="images/Icon-sep.png" alt="">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="carousel slide" id="quote-carousel" data-interval="3000">
-                        <ol class="carousel-indicators">
-                            <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#quote-carousel" data-slide-to="1"></li>
-                            <li data-target="#quote-carousel" data-slide-to="2"></li>
-                        </ol>
-
-                        <div class="carousel-inner">
-                            <div class="active item">
-                                <blockquote>
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <div class="profile-circle">
-                                                <img src="images/t1.png" class="img-circle" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <p>"This is Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
-                                                facilis veritatis ex voluptatibus vel alias odio quia. Molestias,
-                                                aspernatur! Quidem molestiae laudantium accusamus dolorum. Possimus
-                                                veritatis, excepturi sequi repellendus ab beatae repudiandae quasi a
-                                                voluptates ea, doloremque, adipisci est fugit."</p>
-                                            <span class="name dart-fs-16">Wine</span>
-                                            <span class="position dart-fs-12">Director</span>
-                                        </div>
-                                    </div>
-                                </blockquote>
-                            </div>
-                            <div class="item">
-                                <blockquote>
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <div class="profile-circle">
-                                                <img src="images/t2.png" class="img-circle" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <p>"This is Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
-                                                facilis veritatis ex voluptatibus vel alias odio quia. Molestias,
-                                                aspernatur! Quidem molestiae laudantium accusamus dolorum. Possimus
-                                                veritatis, excepturi sequi repellendus ab beatae repudiandae quasi a
-                                                voluptates ea, doloremque, adipisci est fugit."</p>
-                                            <span class="name dart-fs-16">Wine</span>
-                                            <span class="position dart-fs-12">Director</span>
-                                        </div>
-                                    </div>
-                                </blockquote>
-                            </div>
-                            <div class="item">
-                                <blockquote>
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <div class="profile-circle">
-                                                <img src="images/t3.png" class="img-circle" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <p>"This is Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
-                                                facilis veritatis ex voluptatibus vel alias odio quia. Molestias,
-                                                aspernatur! Quidem molestiae laudantium accusamus dolorum. Possimus
-                                                veritatis, excepturi sequi repellendus ab beatae repudiandae quasi a
-                                                voluptates ea, doloremque, adipisci est fugit."</p>
-                                            <span class="name dart-fs-16">Wine</span>
-                                            <span class="position dart-fs-12">Director</span>
-                                        </div>
-                                    </div>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="blog">
-        <div class="container">
-            <div class="row">
-                <div class="dart-headingstyle-one text-center">
-                    <h2 class="dart-heading">Latest Blog</h2>
-                    <img src="images/Icon-sep.png" alt="">
-                </div>
-            </div>
-            <div class="row no-gutter">
-                <div class="col-md-4 col-sm-4">
-                    <div class="blog-wrapper">
-                        <div class="blog-img ImageWrapper">
-                            <a href="#" class="bubble-top">
-                                <img src="images/b1.jpg" class="img-responsive" alt="">
-                                <div class="PStyleHe"></div>
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <h4 class="blog-title"><a href="#">New Wine Shop in your area</a></h4>
-                            <p class="post-date">August 26, 2021</p>
-                            <p class="post-content">This is Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quisquam minus in commodi illo laboriosam autem.</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="blog-wrapper">
-
-                        <div class="blog-content">
-                            <h4 class="blog-title"><a href="#">Jack Daniels are one of the best</a></h4>
-                            <p class="post-date">August 26, 2021</p>
-                            <p class="post-content">This is Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quisquam minus in commodi illo laboriosam autem.</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                        <div class="blog-img ImageWrapper">
-                            <a href="#" class="bubble-bottom">
-                                <img src="images/b2.jpg" class="img-responsive" alt="">
-                                <div class="PStyleHe"></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="blog-wrapper">
-                        <div class="blog-img ImageWrapper">
-                            <a href="#" class="bubble-top">
-                                <img src="images/b3.jpg" class="img-responsive" alt="">
-                                <div class="PStyleHe"></div>
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <h4 class="blog-title"><a href="#">New Wine Shop in your area</a></h4>
-                            <p class="post-date">August 26, 2021</p>
-                            <p class="post-content">This is Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quisquam minus in commodi illo laboriosam autem.</p>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="newsletter-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <div class="dart-headingstyle-one t-mb-20 text-left t-pt-40 t-pb-30">
-                        <h2 class="dart-heading">Newsletter</h2>
-                        <p>Sign Up to our newsletter and save 20% of on next purchase</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <form action="#" class="form-inline">
-                        <div class="newsletter t-pt-70 t-pb-30">
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email...">
-                            </div>
-                            <button type="submit" class="btn btn-default">Subscribe <i
-                                    class="fa fa-envelope"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-3">
-                    <div class="footer-block about">
-                        <h4 class="footer-title">Company</h4>
-                        <hr class="footer_border">
-                        <ul class="list-unstyled">
-                            <li><a href="javascript:void(0)">About Us</a></li>
-                            <li><a href="javascript:void(0)">Contact Us</a></li>
-                            <li><a href="javascript:void(0)">Privacy Policy</a></li>
-                            <li><a href="javascript:void(0)">Terms &amp; Conditons</a></li>
-                            <li><a href="javascript:void(0)">Support Center</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <div class="footer-block about">
-                        <h4 class="footer-title">Useful Link</h4>
-                        <hr class="footer_border">
-                        <ul class="list-unstyled">
-                            <li><a href="javascript:void(0)">Size Chart</a></li>
-                            <li><a href="javascript:void(0)">Our Locations</a></li>
-                            <!-- <li><a href="javascript:void(0)">FAQs</a></li> -->
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <div class="footer-block about">
-                        <h4 class="footer-title">Questions?</h4>
-                        <hr class="footer_border">
-                        <ul class="list-unstyled">
-                            <li><a href="javascript:void(0)">Help Center</a></li>
-                            <li><a href="javascript:void(0)">Track Order</a></li>
-                            <!-- <li><a href="javascript:void(0)">Return</a></li> -->
-                            <!-- <li><a href="javascript:void(0)">Shipping Info</a></li> -->
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <div class="footer-block about">
-                        <h4 class="footer-title">Connect With Us</h4>
-                        <hr class="footer_border">
-                        <div class="contact_footer">
-                            <div class="footer_icon">
-                                <a href="#"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-pinterest"></i></a>
-                                <a href="#"><i class="fab fa-github"></i></a>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                                <a href="#"><i class="fab fa-google"></i></a>
-                                <a href="#"><i class="fab fa-youtube"></i></a>
-                                <a href="#"><i class="fab fa-dribbble"></i></a>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="contact_footer">
-                            <div class="footer_icon">
-                                <div><i class="fa fa-paper-plane"></i>Jagamaster</div>
-                                <div><i class="fa fa-envelope"></i><a href="okekebransson@gmail.com">okekebransson@gmail.com</a>
-                                </div>
-                                <div><i class="fa fa-phone"></i><a href="tel:+234-9012460816">+234 9012460816</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer_bottom_outer">
+        <footer class="footer">
             <div class="container">
                 <div class="row">
-                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footerbottom_link">
+                    <div class="col-md-3 col-sm-3">
+                        <div class="footer-block about">
+                            <h4 class="footer-title">Company</h4>
+                            <hr class="footer_border">
+                            <ul class="list-unstyled">
+                                <li><a href="javascript:void(0)">About Us</a></li>
+                                <li><a href="javascript:void(0)">Contact Us</a></li>
+                                <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                                <li><a href="javascript:void(0)">Terms &amp; Conditons</a></li>
+                                <li><a href="javascript:void(0)">Support Center</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <div class="footer-block about">
+                            <h4 class="footer-title">Useful Link</h4>
+                            <hr class="footer_border">
+                            <ul class="list-unstyled">
+                                <li><a href="javascript:void(0)">Size Chart</a></li>
+                                <li><a href="javascript:void(0)">Our Locations</a></li>
+                                <!-- <li><a href="javascript:void(0)">FAQs</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <div class="footer-block about">
+                            <h4 class="footer-title">Questions?</h4>
+                            <hr class="footer_border">
+                            <ul class="list-unstyled">
+                                <li><a href="javascript:void(0)">Help Center</a></li>
+                                <li><a href="javascript:void(0)">Track Order</a></li>
+                                <!-- <li><a href="javascript:void(0)">Return</a></li> -->
+                                <!-- <li><a href="javascript:void(0)">Shipping Info</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <div class="footer-block about">
+                            <h4 class="footer-title">Connect With Us</h4>
+                            <hr class="footer_border">
+                            <div class="contact_footer">
+                                <div class="footer_icon">
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-google"></i></a>
+                                    <a href="#"><i class="fab fa-youtube"></i></a>
+                                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="contact_footer">
+                                <div class="footer_icon">
+                                    <div><i class="fa fa-paper-plane"></i>Jagamaster</div>
+                                    <div><i class="fa fa-envelope"></i><a
+                                            href="okekebransson@gmail.com">okekebransson@gmail.com</a>
+                                    </div>
+                                    <div><i class="fa fa-phone"></i><a href="tel:+234-9012460816">+234 9012460816</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom_outer">
+                <div class="container">
+                    <div class="row">
+                        <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footerbottom_link">
                         <div class="card">
                             <ul class="list-inline">
                                 <li><img src="images/card-1.png" alt="" class="img-responsive"></li>
@@ -1391,24 +692,25 @@ Give it a try today—experience the taste, feel the energy, and keep the good v
                             </ul>
                         </div>
                     </div> -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="copyright">
-                            <p>JagaMaster &copy; 2025. Made with <i class="fa fa-heart"></i>by BranTechs</p>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="copyright">
+                                <p>JagaMaster &copy; 2025. Made with <i class="fa fa-heart"></i>by BranTechs</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
 
 
-    <script src="Dependencies/jquery.min.js"></script>
-    <script src="Dependencies/jquery.easing.min.js"></script>
-    <script src="Dependencies/bootstrap.min.js"></script>
-    <script src="Dependencies/masterslider.min.js"></script>
-    <script src="Dependencies/owl.carousel.min.js"></script>
-    <script src="main.js"></script>
+        <script src="Dependencies/jquery.min.js"></script>
+        <script src="Dependencies/jquery.easing.min.js"></script>
+        <script src="Dependencies/bootstrap.min.js"></script>
+        <script src="Dependencies/masterslider.min.js"></script>
+        <script src="Dependencies/owl.carousel.min.js"></script>
+        <script src="main.js"></script>
+    </div>
 </body>
 
 </html>

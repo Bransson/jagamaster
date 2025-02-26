@@ -1,68 +1,9 @@
 (function ($) {
-    ("use strict");
+    // ("use strict");
 
     //canvas menu activation
 
-    $(".canvas_open").on("click", function () {
-        $(".offcanvas_menu_wrapper, .off_canvas_overlay").addClass("active");
-    });
-
-    $(".canvas_close").on("click", function () {
-        $(".offcanvas_menu_wrapper, .off_canvas_overlay").removeClass("active");
-    });
-
-    // offcanvas menu
-    var $offcanvasNav = $(".offcanvas_main_menu"),
-        $offcanvasNavSubMenu = $offcanvasNav.find(".sub-menu");
-    $offcanvasNavSubMenu.parent().prepend('<span class="menu-expand"><i class="fa fa-angle-down"></i></span>');
-
-    $offcanvasNavSubMenu.slideUp();
-
-    $offcanvasNav.on("click", "li a, li .menu-expand", function (e) {
-        var $this = $(this);
-        if ($this.parent().attr("class").match(/\b(menu-item-has-children| has-children | has-sub-menu)\b/) && ($this.attr("href") === "#" || $this.hasClass("menu-expand"))) {
-            e.preventDefault();
-            if ($this.siblings("ul:visible").length) {
-                $this.siblings("ul").slideUp("slow");
-            }
-            else {
-                $this.closest("li").siblings("li").find("ul:visible").slideUp("slow");
-                $this.siblings("ul").slideDown("slow");
-            }
-        }
-
-        if ($this.is("a") || $this.is("span") || $this.attr("class").match(/\b(menu-expand)\b/)) {
-            $this.parent().toggleClass("menu-open");
-        }
-        else if ($this.is("li") && $this.attr("class").match(/\b('menu-item-has-children')\b/)) {
-            $this.toggleClass("menu-open");
-        }
-
-    });
-
-    //search box toggle
-    $(".search_box > a").on("click", function () {
-        $(this).toggleClass("active");
-        $(".search_widget").slideToggle("medium");
-    });
-
-    //mini cart activation
-    $(".mini_cart_wrapper > a").on("click", function () {
-        if ($(window).width() < 991) {
-            $(".mini_cart").slideToggle("medium");
-        }
-    });
-
-    // header sticky
-    $(window).on("scroll", function () {
-        var scroll = $(window).scrollTop();
-        if (scroll < 100) {
-            $(".sticky-header").removeClass("sticky");
-        } else {
-            $(".sticky-header").addClass("sticky");
-        }
-    });
-
+   
     //master slider carousel
 
     var slider = new MasterSlider();
@@ -108,3 +49,95 @@
 
 
 })(jQuery);
+
+
+document.getElementById("menu-toggle").addEventListener("click", function (event) {
+    var menu = document.getElementById("mobile-menu");
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+    event.stopPropagation(); // Prevents the click from immediately closing the menu
+});
+
+// Close menu when clicking anywhere outside it
+document.addEventListener("click", function (event) {
+    var menu = document.getElementById("mobile-menu");
+    var toggleButton = document.getElementById("menu-toggle");
+
+    // If the clicked element is NOT the menu or the toggle button, close it
+    if (menu.style.display === "block" && !menu.contains(event.target) && !toggleButton.contains(event.target)) {
+        menu.style.display = "none";
+    }
+});
+function verifyAge(event) {
+    event.preventDefault();
+    
+    const day = document.getElementById("birthDay").value;
+    const month = document.getElementById("birthMonth").value;
+    const year = document.getElementById("birthYear").value;
+    
+    if (!day || !month || !year) {
+        alert("Please enter your full date of birth.");
+        return;
+    }
+    
+    const birthDate = new Date(year, month - 1, day);
+    const currentDate = new Date();
+    let age = currentDate.getFullYear() - birthDate.getFullYear();
+    const monthDiff = currentDate.getMonth() - birthDate.getMonth();
+    const dayDiff = currentDate.getDate() - birthDate.getDate();
+    
+    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+        age--;
+    }
+    
+    if (age >= 18) {
+        const verificationContainer = document.getElementById("verification-container");
+        if (verificationContainer) {
+            verificationContainer.style.display = "none"; // Hide the overlay
+        }
+        
+        document.getElementById("content").style.filter = "none"; // Remove blur effect
+        // document.body.style.overflow = "auto"; // Restore scrolling 
+    } else {
+        alert("Access Denied. You must be 18 or older to proceed.");
+        document.body.style.overflow = "hidden"; // Prevent interaction with the page
+    }
+}
+
+
+
+// scrolling in the welcome
+
+
+const images = [
+    "images/product/blazefull.jpg", // Image 1
+    "images/product/blackjackfull.jpg", // Image 1
+    "images/product/highwayfull.jpg", // Image 2
+    "images/product/tequilaicefull.jpg",  // Image 3
+    "images/product/xxlfull.jpg"  // Image 3
+];
+
+let index = 0;
+const slider = document.getElementById("slider");
+let slideDirection = 1; // 1 = left to right, -1 = right to left
+
+function changeImage() {
+    slider.style.transform = `translateX(${slideDirection * 100}%)`; // Move image out
+
+    setTimeout(() => {
+        index = (index + 1) % images.length;
+        slider.src = images[index];
+        slider.style.transform = `translateX(${slideDirection * -100}%)`; // Move new image from opposite direction
+
+        setTimeout(() => {
+            slider.style.transform = "translateX(0%)"; // Center image
+        }, 50);
+
+        slideDirection *= -1; // Reverse direction for next transition
+    }, 1000);
+}
+
+setInterval(changeImage, 2000); // Change every 2 seconds
