@@ -2628,3 +2628,98 @@ blockquote {
         max-width: 320px;
     }
 }
+
+
+
+
+/* ✅ Video Container */
+.video-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    max-width: 500px;
+    height: 300px; /* Adjust height as needed */
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+/* ✅ Mobile Responsive */
+@media (max-width: 768px) {
+    .video-container {
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+
+/* Hide desktop menu on mobile */
+@media (max-width: 991px) {
+    .main_menu {
+        display: none;
+    }
+}
+
+/* Mobile Menu Button (Hamburger Icon) */
+.mobile-menu-icon {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-icon {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 1000;
+    }
+
+    .mobile-menu-icon button {
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Hidden mobile menu (default) */
+    #mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 9999;
+        padding-top: 50px;
+    }
+
+    /* Menu items */
+    #mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    #mobile-menu ul li {
+        padding: 15px;
+    }
+
+    #mobile-menu ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+    }
+
+    #mobile-menu ul li a:hover {
+        color: red;
+    }
+}
