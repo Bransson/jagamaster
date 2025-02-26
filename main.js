@@ -124,19 +124,14 @@ const slider = document.getElementById("slider");
 let slideDirection = 1; // 1 = left to right, -1 = right to left
 
 function changeImage() {
-    slider.style.transform = `translateX(${slideDirection * 100}%)`; // Move image out
-
+    // ✅ Fix: Use opacity instead of transform for Safari compatibility
+    slider.style.opacity = "0"; // Fade out current image
     setTimeout(() => {
         index = (index + 1) % images.length;
         slider.src = images[index];
-        slider.style.transform = `translateX(${slideDirection * -100}%)`; // Move new image from opposite direction
-
-        setTimeout(() => {
-            slider.style.transform = "translateX(0%)"; // Center image
-        }, 50);
-
-        slideDirection *= -1; // Reverse direction for next transition
-    }, 1000);
+        slider.style.opacity = "1"; // Fade in new image
+    }, 500); // Short delay before changing image
 }
 
-setInterval(changeImage, 2000); // Change every 2 seconds
+// ✅ Start image slider with a 2-second interval
+setInterval(changeImage, 3000);
