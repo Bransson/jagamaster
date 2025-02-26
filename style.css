@@ -2306,7 +2306,10 @@ blockquote {
     background-color: rgba(0, 0, 0, 0.8); /* Transparent black overlay */
     
     z-index: 9999;
-    overflow: hidden;
+
+
+
+    
 }
 
 /* Age verification form */
@@ -2317,7 +2320,16 @@ blockquote {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     width: 300px;
     text-align: center;
+
+    
 }
+
+.verified #content {
+    filter: none;
+    -webkit-filter: none;
+    pointer-events: auto;
+}
+
 
 .verification-form h2 {
     margin-bottom: 20px;
@@ -2361,7 +2373,11 @@ blockquote {
 
 /* Initially blur the content */
 #content {
-    filter: blur(5px);
+
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    transition: filter 0.5s ease-in-out;
+
 }
 
 
@@ -2493,17 +2509,31 @@ blockquote {
 /* Hero Section */
 .hero-section {
     display: flex;
+    flex-direction: column;
+
     align-items: center;
     justify-content: center;
     height: 100vh;
     padding: 0 10%;
-    gap: 50px;
 }
 
 /* Hero Content */
 .hero-content {
     text-align: left;
     max-width: 500px;
+}
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, white, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Gradient JAGAMASTER Text */
