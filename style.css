@@ -1538,61 +1538,68 @@ section {
 .category-img .cat-link a:hover {
     color: #f0dc6f;
 }
-
-.super-deal-section {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top right;
-    min-height: 500px;
+#order {
+    text-align: center;
+    padding: 50px;
+    color: white;
 }
 
-.super-deal h1 {
-    color: #fff;
-    font-weight: 600;
-    font-size: 3.42em;
-}
-
-.super-deal h2 {
-    color: #fff;
-}
-
-.super-deal a.btn {
-    border: 1px solid #fff;
-    padding: 10px 25px;
-    color: #fff;
-}
-
-.super-deal a.btn:hover {
-    border: 1px solid #d9932f;
-    color: #d9932f;
-    background-color: #fff;
-}
-
+/* ✅ Center text and form properly */
 .super-deal {
-    margin-top: 85px;
-    margin-bottom: 85px;
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
-    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-@media only screen and (max-width: 991px) {
-    .super-deal-section {
-        min-height: 350px;
-    }
+/* ✅ Order Form Styling */
+.order-form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.order-form {
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+}
+
+.order-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.order-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+.order-form button {
+    margin-top: 20px;
+    padding: 10px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.order-form button:hover {
+    background: darkred;
+}
+
+/* ✅ Mobile Fix: Stack text above the form */
+@media (max-width: 767px) {
     .super-deal {
-        margin-top: 0px;
-        margin-bottom: 15px;
+        text-align: center;
     }
-    .super-deal h1 {
-        font-weight: 600;
-        font-size: 24px;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .super-deal-section {
-        background-position: top center;
-        min-height: 300px;
+    
+    .order-form-container {
+        display: flex;
+        justify-content: center;
     }
 }
 
