@@ -17,6 +17,10 @@ body {
 
 }
 
+input, select, textarea {
+    font-size: 16px; /* Set a minimum font size to stop auto-zoom */
+}
+
 /* general css  */
 
 .fix {
