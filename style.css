@@ -1400,7 +1400,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .ms-slide .ms-layer {
     position: absolute;
-    pointer-events: auto;
 }
 
 .ms-layer.bold-title {
@@ -1458,7 +1457,6 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     z-index: 109;
     top: 0px;
-    pointer-events: none;
 }
 
 ::-webkit-scrollbar {
@@ -1952,7 +1950,6 @@ figure img {
 }
 
 .blog-img .bubble-top::before {
-    pointer-events: none;
     position: absolute;
     z-index: 999;
     content: "";
@@ -1966,7 +1963,6 @@ figure img {
 }
 
 .blog-img .bubble-bottom::before {
-    pointer-events: none;
     position: absolute;
     z-index: 999;
     content: "";
@@ -2293,21 +2289,6 @@ blockquote {
 
 
 
-
-#verification-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Transparent black overlay */
-    z-index: 9999;
-    overflow: hidden;
-}
-
 /* Age verification form */
 .verification-form {
     background-color: #111;
@@ -2316,18 +2297,19 @@ blockquote {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     width: 300px;
     text-align: center;
+    color: white;
 }
 
 .verification-form h2 {
     margin-bottom: 20px;
-    color: #fff;
+    color: red;
 }
 
 .verification-form label {
     display: block;
     margin-top: 10px;
     text-align: left;
-    color: #fff;
+    color: white;
 }
 
 .verification-form input, 
@@ -2337,7 +2319,7 @@ blockquote {
     margin-top: 5px;
     background: #222;
     border: none;
-    color: #fff;
+    color: white;
     border-radius: 5px;
 }
 
@@ -2345,8 +2327,8 @@ blockquote {
     width: 100%;
     padding: 10px;
     margin-top: 20px;
-    background: #fff;
-    color: #000;
+    background: red;
+    color: white;
     border: none;
     border-radius: 5px;
     font-weight: bold;
@@ -2355,29 +2337,31 @@ blockquote {
 }
 
 .verification-form button:hover {
-    background: #ccc;
+    background: darkred;
 }
 
-/* Initially blur the content */
+/* ✅ FIX: Blur content until verification */
 #content {
     filter: blur(5px);
+    -webkit-filter: blur(5px);
 }
 
+/* ✅ Remove blur once verified */
+.verified #content {
+    filter: none;
+    -webkit-filter: none;
+}
 
-
-
-
-/* logo and jagamster with west africa */
-/* Desktop Layout - Logo and Brand Name */
+/* 🔹 LOGO AND JAGAMASTER TEXT */
 .logo img {
-    max-height: 70px; /* Keeps logo size consistent */
+    max-height: 70px;
     width: auto;
 }
 
 .brand-name {
     display: flex;
     flex-direction: column;
-    margin-left: 10px; /* Space between logo and text */
+    margin-left: 10px;
     text-align: left;
 }
 
@@ -2385,31 +2369,43 @@ blockquote {
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
-    color: white; /* White color for desktop */
+    color: white;
 }
 
 .west-africa {
     font-size: 14px;
     font-weight: bold;
-    color: red; /* West Africa in red */
+    color: red;
 }
 
-/* Mobile Layout - Center "JAGAMASTER" */
+/* ✅ FIX: Gradient Text (Safari & Chrome) */
+.jagamaster-text {
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(to right, rgb(255, 255, 255), red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 🔹 RESPONSIVE MOBILE LOGO & BRAND NAME */
 @media (max-width: 768px) {
     .col-md-6 {
         display: flex;
         align-items: center;
-        justify-content: flex-start; /* Align content towards the left */
+        justify-content: flex-start;
     }
 
     .brand-name {
         flex-grow: 1;
-        text-align: center; /* Center "JAGAMASTER" */
-        margin-left: 10px; /* Prevent it from sticking to the logo */
+        text-align: center;
+        margin-left: 10px;
     }
 
     .jagamaster {
-        font-size: 16px; /* Slightly smaller for mobile */
+        font-size: 16px;
     }
 
     .west-africa {
@@ -2417,17 +2413,13 @@ blockquote {
     }
 }
 
-
-
-/* drop down menu for mobile */
-/* Hide desktop menu on mobile */
+/* 🔹 MOBILE MENU FIXES */
 @media (max-width: 991px) {
     .main_menu {
         display: none;
     }
 }
 
-/* Mobile Menu Button (Hamburger Icon) */
 .mobile-menu-icon {
     display: none;
 }
@@ -2449,7 +2441,6 @@ blockquote {
         cursor: pointer;
     }
 
-    /* Hidden mobile menu (default) */
     #mobile-menu {
         display: none;
         position: fixed;
@@ -2462,7 +2453,6 @@ blockquote {
         padding-top: 50px;
     }
 
-    /* Menu items */
     #mobile-menu ul {
         list-style: none;
         padding: 0;
@@ -2485,11 +2475,7 @@ blockquote {
     }
 }
 
-
-
-/* welcome inspired by pepsi website */
-
-/* Hero Section */
+/* 🔹 HERO SECTION INSPIRED BY PEPSI */
 .hero-section {
     display: flex;
     align-items: center;
@@ -2499,19 +2485,9 @@ blockquote {
     gap: 50px;
 }
 
-/* Hero Content */
 .hero-content {
     text-align: left;
     max-width: 500px;
-}
-
-/* Gradient JAGAMASTER Text */
-.jagamaster-text {
-    font-size: 4rem;
-    font-weight: bold;
-    background: linear-gradient(to right, rgb(255, 255, 255), red);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .hero-content p {
@@ -2519,7 +2495,7 @@ blockquote {
     margin-bottom: 1.5rem;
 }
 
-/* CTA Button */
+/* CTA BUTTON */
 .cta-button {
     background-color: #e50914;
     color: #fff;
@@ -2535,7 +2511,7 @@ blockquote {
     background-color: #b20710;
 }
 
-/* Image Slider */
+/* IMAGE SLIDER FIXES */
 .hero-image {
     flex: 1;
     display: flex;
@@ -2558,7 +2534,7 @@ blockquote {
     transition: transform 1s ease-in-out;
 }
 
-/* 🔹 Mobile Responsive */
+/* 🔹 MOBILE RESPONSIVENESS FIX */
 @media (max-width: 1024px) {
     .hero-section {
         flex-direction: column;
@@ -2594,7 +2570,7 @@ blockquote {
     }
 }
 
-/* 🔹 iPhone Pro Max (Large Mobile Screens) */
+/* 🔹 iPhone Pro Max & Large Mobile Screens */
 @media (max-width: 460px) {
     .hero-section {
         flex-direction: column;
@@ -2605,7 +2581,7 @@ blockquote {
 
     .slider-container {
         width: 90%;
-        max-width: 400px; /* Larger images for iPhone Pro Max */
+        max-width: 400px;
     }
 
     .hero-content {
@@ -2614,11 +2590,11 @@ blockquote {
     }
 
     .jagamaster-text {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
 
     .hero-content p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .cta-button {
