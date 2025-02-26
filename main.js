@@ -76,33 +76,40 @@ document.addEventListener("click", function (event) {
 });
 function verifyAge(event) {
     event.preventDefault();
-
+    
     const day = document.getElementById("birthDay").value;
     const month = document.getElementById("birthMonth").value;
     const year = document.getElementById("birthYear").value;
-
+    
     if (!day || !month || !year) {
         alert("Please enter your full date of birth.");
         return;
     }
-
+    
     const birthDate = new Date(year, month - 1, day);
     const currentDate = new Date();
     let age = currentDate.getFullYear() - birthDate.getFullYear();
     const monthDiff = currentDate.getMonth() - birthDate.getMonth();
     const dayDiff = currentDate.getDate() - birthDate.getDate();
-
+    
     if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
         age--;
     }
-
+    
     if (age >= 18) {
-        document.getElementById("verification-container").style.display = "none";
-        document.body.classList.add("verified"); // ✅ Fix: Remove blur once verified
+        const verificationContainer = document.getElementById("verification-container");
+        if (verificationContainer) {
+            verificationContainer.style.display = "none"; // Hide the overlay
+        }
+        
+        document.getElementById("content").style.filter = "none"; // Remove blur effect
+        // document.body.style.overflow = "auto"; // Restore scrolling 
     } else {
-        alert("Access Denied. You must be 18 or older to enter.");
+        alert("Access Denied. You must be 18 or older to proceed.");
+        document.body.style.overflow = "hidden"; // Prevent interaction with the page
     }
 }
+
 
 
 // scrolling in the welcome
