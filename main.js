@@ -74,36 +74,37 @@ document.addEventListener("click", function (event) {
         menu.style.display = "none";
     }
 });
-function verifyAge(event) {
-    event.preventDefault(); // Prevents page reload
 
-    const day = document.getElementById("birthDay").value;
-    const month = document.getElementById("birthMonth").value;
-    const year = document.getElementById("birthYear").value;
+// function verifyAge(event) {
+//     event.preventDefault(); // Prevents page reload
 
-    if (!day || !month || !year) {
-        alert("Please enter your full date of birth.");
-        return;
-    }
+//     const day = document.getElementById("birthDay").value;
+//     const month = document.getElementById("birthMonth").value;
+//     const year = document.getElementById("birthYear").value;
 
-    const birthDate = new Date(year, month - 1, day);
-    const currentDate = new Date();
-    let age = currentDate.getFullYear() - birthDate.getFullYear();
-    const monthDiff = currentDate.getMonth() - birthDate.getMonth();
-    const dayDiff = currentDate.getDate() - birthDate.getDate();
+//     if (!day || !month || !year) {
+//         alert("Please enter your full date of birth.");
+//         return;
+//     }
 
-    // Adjust age if birthday hasn't happened yet this year
-    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-        age--;
-    }
+//     const birthDate = new Date(year, month - 1, day);
+//     const currentDate = new Date();
+//     let age = currentDate.getFullYear() - birthDate.getFullYear();
+//     const monthDiff = currentDate.getMonth() - birthDate.getMonth();
+//     const dayDiff = currentDate.getDate() - birthDate.getDate();
 
-    if (age >= 18) {
-        document.getElementById("verification-container").style.display = "none"; // Hide verification
-        document.body.classList.add("verified"); // ✅ Unlocks content & removes blur
-    } else {
-        alert("Access Denied. You must be 18 or older to enter.");
-    }
-}
+//     // Adjust age if birthday hasn't happened yet this year
+//     if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+//         age--;
+//     }
+
+//     if (age >= 18) {
+//         document.getElementById("verification-container").style.display = "none"; // Hide verification
+//         document.body.classList.add("verified"); // ✅ Unlocks content & removes blur
+//     } else {
+//         alert("Access Denied. You must be 18 or older to enter.");
+//     }
+// }
 
 
 

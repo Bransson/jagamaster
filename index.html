@@ -12,41 +12,198 @@
     <link rel="stylesheet" href="Dependencies/owl.carousel.min.css">
     <link rel="stylesheet" href="Dependencies/owl.theme.default.min.css">
     <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        /* Reset Styles */
+
+        /* Age Verification Overlay */
+        #verification-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+        }
+
+        /* Age Verification Form */
+        .verification-form {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            width: 320px;
+            text-align: center;
+            color: white;
+        }
+
+        .verification-form h2 {
+            margin-bottom: 15px;
+            color: red;
+        }
+
+        .verification-form label {
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+            color: white;
+            font-size: 14px;
+        }
+
+        .verification-form input,
+        .verification-form select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background: #333;
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .verification-form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .verification-form button:hover {
+            background: darkred;
+        }
+
+        /* ✅ Fix: Blur the Content Until Verified */
+        #content {
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+            pointer-events: none;
+            transition: filter 0.5s ease-in-out;
+        }
+
+        /* ✅ Fix: Remove Blur When Verified */
+        .verified #content {
+            filter: none;
+            -webkit-filter: none;
+            pointer-events: auto;
+        }
+
+        /* ✅ Hero Section */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 10%;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            background: linear-gradient(to right, white, red);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            background-color: #e50914;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-size: 1.25rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #b20710;
+        }
+
+        /* ✅ Mobile Friendly Adjustments */
+        @media (max-width: 480px) {
+            .verification-form {
+                width: 90%;
+            }
+
+            .verification-form h2 {
+                font-size: 18px;
+            }
+
+            .verification-form label {
+                font-size: 12px;
+            }
+
+            .verification-form input,
+            .verification-form select {
+                font-size: 14px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-   <!-- Age Verification Overlay -->
-   <div id="verification-container">
-    <form class="verification-form" onsubmit="verifyAge(event);">
-        <h2>Age Verification</h2>
-        <p>You must be 18+ to enter this site.</p>
 
-        <label for="birthDay">Day</label>
-        <input type="number" id="birthDay" min="1" max="31" required>
+    <div id="verification-container">
+        <form class="verification-form" onsubmit="verifyAge(event);">
+            <h2>Age Verification</h2>
+            <p>You must be 18+ to enter this site.</p>
 
-        <label for="birthMonth">Month</label>
-        <select id="birthMonth" required>
-            <option value="">Select Month</option>
-            <option value="1">January</option>
-            <option value="2">February</option>
-            <option value="3">March</option>
-            <option value="4">April</option>
-            <option value="5">May</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
-            <option value="9">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-        </select>
+            <label for="birthDay">Day</label>
+            <input type="number" id="birthDay" min="1" max="31" required>
 
-        <label for="birthYear">Year</label>
-        <input type="number" id="birthYear" min="1900" max="2024" required>
+            <label for="birthMonth">Month</label>
+            <select id="birthMonth" required>
+                <option value="">Select Month</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
 
-        <button type="submit">Verify Age</button>
-    </form>
-</div>
+            <label for="birthYear">Year</label>
+            <input type="number" id="birthYear" min="1900" max="2024" required>
+
+            <button type="submit">Verify Age</button>
+        </form>
+    </div>
 
     <div id="content">
 
@@ -703,7 +860,39 @@
             </div>
         </footer>
 
-
+        <script>
+            function verifyAge(event) {
+                event.preventDefault(); // Prevents page reload
+    
+                const day = document.getElementById("birthDay").value;
+                const month = document.getElementById("birthMonth").value;
+                const year = document.getElementById("birthYear").value;
+    
+                if (!day || !month || !year) {
+                    alert("Please enter your full date of birth.");
+                    return;
+                }
+    
+                const birthDate = new Date(year, month - 1, day);
+                const currentDate = new Date();
+                let age = currentDate.getFullYear() - birthDate.getFullYear();
+                const monthDiff = currentDate.getMonth() - birthDate.getMonth();
+                const dayDiff = currentDate.getDate() - birthDate.getDate();
+    
+                // Adjust age if birthday hasn't happened yet this year
+                if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                    age--;
+                }
+    
+                if (age >= 18) {
+                    document.getElementById("verification-container").style.display = "none"; // Hide verification
+                    document.body.classList.add("verified"); // ✅ Unlocks content & removes blur
+                } else {
+                    alert("Access Denied. You must be 18 or older to enter.");
+                }
+            }
+        </script>
+    
 
         <script src="Dependencies/jquery.min.js"></script>
         <script src="Dependencies/jquery.easing.min.js"></script>

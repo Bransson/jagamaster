@@ -2365,21 +2365,26 @@ blockquote {
 
 
 
-/* Age Verification Overlay */
+
 #verification-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+    height: 100vh; /* Ensure it covers the full viewport height */
+    width: 100vw; /* Ensure it covers the full viewport width */
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent black overlay */
+    
     z-index: 9999;
+
+
+
+    
 }
 
-/* Age Verification Form */
+/* Age verification form */
 .verification-form {
     background-color: #111;
     padding: 20px;
@@ -2387,7 +2392,16 @@ blockquote {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     width: 300px;
     text-align: center;
+
+    
 }
+
+.verified #content {
+    filter: none;
+    -webkit-filter: none;
+    pointer-events: auto;
+}
+
 
 .verification-form h2 {
     margin-bottom: 20px;
@@ -2401,7 +2415,7 @@ blockquote {
     color: #fff;
 }
 
-.verification-form input,
+.verification-form input, 
 .verification-form select {
     width: 100%;
     padding: 10px;
@@ -2422,43 +2436,97 @@ blockquote {
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 
 .verification-form button:hover {
     background: #ccc;
 }
 
-/* ✅ Fix: Blur the Content Until Verified */
+/* Initially blur the content */
 #content {
+
     filter: blur(8px);
     -webkit-filter: blur(8px);
     transition: filter 0.5s ease-in-out;
-    pointer-events: none;
+
 }
 
-/* ✅ Remove Blur When Verified */
-.verified #content {
-    filter: none;
-    -webkit-filter: none;
-    pointer-events: auto;
+
+
+
+
+/* logo and jagamster with west africa */
+/* Desktop Layout - Logo and Brand Name */
+.logo img {
+    max-height: 70px; /* Keeps logo size consistent */
+    width: auto;
 }
 
-/* ✅ HERO SECTION (Inspired by Pepsi) */
+.brand-name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px; /* Space between logo and text */
+    text-align: left;
+}
+
+.jagamaster {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white; /* White color for desktop */
+}
+
+.west-africa {
+    font-size: 14px;
+    font-weight: bold;
+    color: red; /* West Africa in red */
+}
+
+/* Mobile Layout - Center "JAGAMASTER" */
+@media (max-width: 768px) {
+    .col-md-6 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Align content towards the left */
+    }
+
+    .brand-name {
+        flex-grow: 1;
+        text-align: center; /* Center "JAGAMASTER" */
+        margin-left: 10px; /* Prevent it from sticking to the logo */
+    }
+
+    .jagamaster {
+        font-size: 16px; /* Slightly smaller for mobile */
+    }
+
+    .west-africa {
+        font-size: 12px;
+    }
+}
+
+
+
+
+/* welcome inspired by pepsi website */
+
+/* Hero Section */
 .hero-section {
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
     height: 100vh;
     padding: 0 10%;
 }
 
+/* Hero Content */
 .hero-content {
     text-align: left;
     max-width: 500px;
 }
-
 .hero-content h1 {
     font-size: 3.5rem;
     font-weight: bold;
@@ -2467,12 +2535,29 @@ blockquote {
     -webkit-text-fill-color: transparent;
 }
 
+
 .hero-content p {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
 }
 
-/* ✅ CTA BUTTON */
+/* Gradient JAGAMASTER Text */
+.jagamaster-text {
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(to right, rgb(255, 255, 255), red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* Added for non-webkit browsers */
+
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* CTA Button */
 .cta-button {
     background-color: #e50914;
     color: #fff;
@@ -2488,13 +2573,45 @@ blockquote {
     background-color: #b20710;
 }
 
-/* ✅ MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
+/* Image Slider */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    max-width: 500px;
+}
+
+#slider {
+    width: 100%;
+    height: auto;
+    position: relative;
+    transition: transform 1s ease-in-out;
+}
+
+/* 🔹 Mobile Responsive */
+@media (max-width: 1024px) {
     .hero-section {
         flex-direction: column;
         text-align: center;
         height: auto;
         padding: 60px 5%;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .slider-container {
+        width: 85%;
     }
 
     .hero-content {
@@ -2506,7 +2623,63 @@ blockquote {
         font-size: 3.5rem;
     }
 
+    .hero-content p {
+        font-size: 1.3rem;
+    }
+
     .cta-button {
         font-size: 1.1rem;
+    }
+}
+
+/* 🔹 iPhone Pro Max (Large Mobile Screens) */
+@media (max-width: 460px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 80px 8%;
+    }
+
+    .slider-container {
+        width: 90%;
+        max-width: 400px; /* Larger images for iPhone Pro Max */
+    }
+
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .jagamaster-text {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+    }
+}
+
+/* 🔹 Extra Small Devices (iPhone SE & smaller) */
+@media (max-width: 375px) {
+    .hero-section {
+        padding: 50px 10%;
+    }
+
+    .jagamaster-text {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .slider-container {
+        width: 85%;
+        max-width: 320px;
     }
 }
