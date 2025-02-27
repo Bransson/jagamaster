@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - JAGAMASTER</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="Dependencies/bootstrap.css">
+    <link rel="stylesheet" href="Dependencies/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="Dependencies/owl.carousel.min.css">
+    <link rel="stylesheet" href="Dependencies/owl.theme.default.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+
+
+    <style>
+/* ✅ Contact Section - Dark Theme */
+.contact-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #0a0c0b; /* Dark background */
+    color: white;
+}
+
+/* ✅ Flexbox Layout for Video + Form */
+.contact-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* ✅ Video Styling */
+.video-container {
+    flex: 1;
+    max-width: 500px;
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ✅ Contact Content */
+.contact-content {
+    flex: 1;
+    max-width: 500px;
+}
+
+/* ✅ Add padding-top of 130px to contact content only on desktop */
+@media (min-width: 1024px) {
+    .contact-content {
+        padding-top: 130px;
+    }
+}
+
+/* ✅ Gradient Heading */
+.gradient-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(to right, white, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ✅ Contact Form Styling */
+.contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* ✅ Input Fields */
+.contact-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #ddd;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #bbb;
+}
+
+/* ✅ Contact Form Button */
+.contact-form button {
+    margin-top: 20px;
+    padding: 12px;
+    background: linear-gradient(to right, red, darkred);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background: linear-gradient(to right, darkred, red);
+}
+
+/* ✅ Contact List (Numbers & States Section) */
+.contact-list {
+    margin-top: 60px;
+    padding: 30px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.05); /* Subtle background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* ✅ Contact List Items */
+.contact-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* ✅ Make numbers & states fit better */
+.contact-list li {
+    padding: 15px;
+    font-size: 18px;
+    border-bottom: 1px solid #444;
+    display: flex;
+    justify-content: space-between; /* Ensures state & number are on the same line */
+    align-items: center;
+    flex-wrap: wrap; /* Prevents breaking into multiple lines */
+    gap: 10px; /* Adds spacing */
+}
+
+/* ✅ Ensure numbers don't wrap */
+.contact-list li strong {
+    color: red;
+    font-weight: bold;
+    white-space: nowrap; /* Stops numbers from breaking onto new lines */
+}
+
+/* ✅ Last item should not have a border */
+.contact-list li:last-child {
+    border-bottom: none;
+}
+
+/* ✅ Google Map */
+.google-map {
+    margin-top: 40px;
+}
+
+/* ✅ Mobile Responsive */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .video-container {
+        max-width: 100%;
+    }
+
+    .contact-content {
+        max-width: 100%;
+    }
+
+    .contact-form {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .contact-list {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .contact-list li {
+        font-size: 16px;
+        padding: 12px;
+        flex-direction: column; /* Stack on smaller screens */
+        text-align: center;
+    }
+
+    .contact-list li strong {
+        font-size: 16px;
+    }
+}
+
+    </style>
+
+
+</head>
+<body>
+
+        <!-- Mobile Menu Button (Hamburger Icon) -->
+        <div class="mobile-menu-icon">
+            <button id="menu-toggle">
+                ☰
+            </button>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu">
+            <ul>
+                <li><a href="index.html"  class="scroll-link">Home</a></li>
+                <li><a href="index.html#products"  class="scroll-link">Products</a></li>
+                <li><a href="index.html#order"  class="scroll-link">Order</a></li>
+                <li><a href="index.html#aboutus"  class="scroll-link">About Us</a></li>
+                <li><a href="contact-us.html"  class="scroll-link">Contact Us</a></li>
+            </ul>
+        </div>
+        
+        <header>
+            <div class="main_header header_transparent header-mobile-m">
+                <div class="header_container sticky-header">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo + Brand Name -->
+                            <div class="col-lg-3 col-md-6 col-8 d-flex align-items-center">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <!-- <img src="images/logo1.png" alt="Logo"> -->
+                                        <img src="images/goldlogo.png" alt="Logo">
+                                    </a>
+                                </div>
+                                <div class="brand-name">
+                                    <span class="jagamaster">JAGAMASTER</span>
+                                    <span class="west-africa">West Africa</span>
+                                </div>
+                            </div>
+                            <!-- Navigation Menu (Only for Desktop) -->
+                            <div class="col-lg-6 d-none d-lg-block">
+                                <div class="main_menu menu_two menu_position">
+                                    <nav>
+                                        <ul>
+                                            <li><a href="index.html" class="active">Home</a></li>
+                                            <li><a href="index.html#products"  class="scroll-link">Products</a></li>
+                                            <li><a href="index.html#order"  class="scroll-link">Order</a></li>
+                                            <li><a href="#index.htmlaboutus"  class="scroll-link">About Us</a></li>
+                                            <li><a href="contact-us.html"  class="scroll-link">Contact Us</a></li>
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+
+                <!-- ✅ Video Section -->
+                <div class="video-container">
+                    <video autoplay loop muted playsinline>
+                        <source src="images/vid.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="contact-content">
+                    <h1 class="gradient-heading">Contact JAGAMASTER</h1>
+                    <p>Get in touch with us for inquiries, orders, and support.</p>
+
+                    <!-- ✅ Contact Form -->
+                    <div class="contact-form">
+                        <form action="submit_contact.php" method="post">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ✅ Nigerian State Contact Numbers -->
+            <div class="contact-list">
+                <h2 class="gradient-heading">Our Contact Numbers by State</h2>
+                <ul>
+                    <li><strong>Lagos:</strong> +234 810 123 4567</li>
+                    <li><strong>Abuja (FCT):</strong> +234 802 987 6543</li>
+                    <li><strong>Anambra:</strong> +234 803 456 7890</li>
+                    <li><strong>Port Harcourt (Rivers):</strong> +234 809 876 5432</li>
+                    <li><strong>Oyo:</strong> +234 805 678 9012</li>
+                    <li><strong>Enugu:</strong> +234 807 234 5678</li>
+                    <li><strong>Imo:</strong> +234 806 345 6789</li>
+                    <li><strong>Benin (Edo):</strong> +234 804 123 9876</li>
+                </ul>
+            </div>
+
+            <!-- ✅ Google Maps (Optional) -->
+            <div class="google-map">
+                <h2 class="gradient-heading">Our Location</h2>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.5422808475887!2d3.3792059153477985!3d6.524379525123986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8d0f4c5c0a1d%3A0x8b35133c72b1d8b9!2sLagos%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1622498765432"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3">
+                    <div class="footer-block about">
+                        <h4 class="footer-title">Company</h4>
+                        <hr class="footer_border">
+                        <ul class="list-unstyled">
+                            <li><a href="index.html#aboutus">About Us</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                            <li><a href="javascript:void(0)">Terms &amp; Conditons</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="footer-block about">
+                        <h4 class="footer-title">Useful Link</h4>
+                        <hr class="footer_border">
+                        <ul class="list-unstyled">
+                            <li><a href="javascript:void(0)">Size Chart</a></li>
+                            <li><a href="javascript:void(0)">Our Locations</a></li>
+                            <!-- <li><a href="javascript:void(0)">FAQs</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="footer-block about">
+                        <h4 class="footer-title">Questions?</h4>
+                        <hr class="footer_border">
+                        <ul class="list-unstyled">
+                            <li><a href="javascript:void(0)">Help Center</a></li>
+                            <li><a href="javascript:void(0)">Track Order</a></li>
+                            <!-- <li><a href="javascript:void(0)">Return</a></li> -->
+                            <!-- <li><a href="javascript:void(0)">Shipping Info</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="footer-block about">
+                        <h4 class="footer-title">Connect With Us</h4>
+                        <hr class="footer_border">
+                        <div class="contact_footer">
+                            <div class="footer_icon">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-pinterest"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-google"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="contact_footer">
+                            <div class="footer_icon">
+                                <div><i class="fa fa-paper-plane"></i>Jagamaster</div>
+                                <div><i class="fa fa-envelope"></i><a
+                                        href="jagamaster@gmail.com">jagamaster@gmail.com</a>
+                                </div>
+                                <div><i class="fa fa-phone"></i><a href="tel:+234-9012460816">+234 9012460816</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom_outer">
+            <div class="container">
+                <div class="row">
+                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footerbottom_link">
+                    <div class="card">
+                        <ul class="list-inline">
+                            <li><img src="images/card-1.png" alt="" class="img-responsive"></li>
+                            <li><img src="images/card-2.png" alt="" class="img-responsive"></li>
+                            <li><img src="images/card-4.png" alt="" class="img-responsive"></li>
+                            <li><img src="images/card-5.png" alt="" class="img-responsive"></li>
+                            <li><img src="images/card-6.png" alt="" class="img-responsive"></li>
+                            <li><img src="images/card-7.png" alt="" class="img-responsive"></li>
+                        </ul>
+                    </div>
+                </div> -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="copyright">
+                            <p>JagaMaster &copy; 2025. Made with <i class="fa fa-heart"></i>by BranTechs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Dependencies/jquery.min.js"></script>
+    <script src="Dependencies/jquery.easing.min.js"></script>
+    <script src="Dependencies/bootstrap.min.js"></script>
+    <script src="Dependencies/masterslider.min.js"></script>
+    <script src="Dependencies/owl.carousel.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
