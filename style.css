@@ -168,18 +168,18 @@ ul {
     }
 }
 
-.sticky-header.sticky .logo a img {
+.sticky-header.sticky  {
     max-width: 118px;
 }
 
 @media only screen and (min-width: 820px) and (max-width: 1024px) {
-    .sticky-header.sticky .logo a img {
+    .sticky-header.sticky{
         max-width: 100%;
     }
 }
 
 @media only screen and (max-width: 767px) {
-    .sticky-header.sticky .logo a img {
+    .sticky-header.sticky{
         max-width: 100px;
     }
 }
@@ -189,17 +189,17 @@ ul {
     padding: 8px 0;
 }
 
-@media only screen and (max-width: 767px) {
+/* @media only screen and (max-width: 767px) {
     .logo {
         display: inline-block;
     }
-}
+} */
 
-@media only screen and (max-width: 767px) {
+/* @media only screen and (max-width: 767px) {
     .logo a img {
         max-width: 110px;
     }
-}
+} */
 
 @media only screen and (min-width: 820px) and (max-width: 1024px) {
     .main_menu {
@@ -1371,14 +1371,6 @@ footer_bottom_outer {
 }
 
 
-/* ✅ Logos Section */
-.logo-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* Adds space between logos */
-    margin-bottom: 15px;
-}
 
 /* ✅ Logo Image Styling */
 .agency-logo {
@@ -1402,9 +1394,9 @@ footer_bottom_outer {
 
 /* ✅ Mobile Responsive */
 @media (max-width: 768px) {
-    .logo-wrapper {
+    /* .logo-wrapper {
         gap: 15px;
-    }
+    } */
 
     .agency-logo {
         width: 40px; /* Slightly smaller on mobile */
@@ -1587,31 +1579,26 @@ blockquote {
 
 }
 
-
-
-
-
-/* logo and jagamster with west africa */
-/* Desktop Layout - Logo and Brand Name */
+/* Default logo size (for mobile and desktop) */
 .logo img {
-    max-height: 70px; /* Keeps logo size consistent */
+    max-height: 70px; /* Default size for mobile */
     width: auto;
 }
 
+/* Increase logo size on larger screens */
+
+/* Brand name styling (only visible on mobile) */
 .brand-name {
     display: flex;
     flex-direction: column;
-    margin-left: 10px; /* Space between logo and text */
+    margin-left: 10px;
     text-align: left;
 }
 
 .jagamaster {
     font-size: 20px;
     font-family: "Cinzel", serif;
-    font-optical-sizing: auto;
     font-weight: 900;
-    font-style: normal;
-    font-weight: bold;
     text-transform: uppercase;
     background: linear-gradient(to right, #D2AF26, #D2AF26);
     -webkit-background-clip: text;
@@ -1627,22 +1614,21 @@ blockquote {
     -webkit-text-fill-color: transparent;
 }
 
-/* Mobile Layout - Center "JAGAMASTER" */
+/* Mobile-specific styles (unchanged from original design) */
 @media (max-width: 820px) {
     .col-md-6 {
         display: flex;
         align-items: center;
-        justify-content: flex-start; /* Align content towards the left */
+        justify-content: flex-start;
     }
 
     .brand-name {
-        flex-grow: 1;
-        text-align: center; /* Center "JAGAMASTER" */
-        margin-left: 10px; /* Prevent it from sticking to the logo */
+        text-align: center;
+        margin-left: 10px;
     }
 
     .jagamaster {
-        font-size: 18px; /* Slightly smaller for mobile */
+        font-size: 18px;
     }
 
     .west-africa {
@@ -1650,7 +1636,45 @@ blockquote {
     }
 }
 
+/* Desktop-only changes */
+@media (min-width: 521px) {
+    /* Make logo bigger */
+    .logo img {
+        max-height: 100px;
+    }
 
+    /* Hide text on desktop */
+    /* .brand-name {
+        display: none;
+    } */
+}
+
+/* Desktop-only changes */
+@media (min-width: 710px) {
+    /* Make logo bigger */
+    .logo img {
+        max-height: 120px;
+    }
+
+    /* Hide text on desktop */
+    /* .brand-name {
+        display: none;
+    } */
+}
+
+
+/* Desktop-only changes */
+@media (min-width: 821px) {
+    /* Make logo bigger */
+    .logo img {
+        max-height: 150px;
+    }
+
+    /* Hide text on desktop */
+    .brand-name {
+        display: none;
+    }
+}
 
 
 /* welcome inspired by pepsi website */
