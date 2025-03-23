@@ -1683,7 +1683,11 @@ blockquote {
 .hero-section {
     display: flex;
     flex-direction: column;
-
+    background-image: url('images/luxury-background.jpg');
+    background-size: cover;  /* Ensures it covers the whole width */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    width: 100vw; /* Full viewport width */
     align-items: center;
     justify-content: center;
     height: 100vh;
